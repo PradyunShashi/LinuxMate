@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "question": "What is a semaphore",
+    "mode": "Concept",
+    "answer": "A semaphore is a hardware register shared by all processes on a multiprocessor system that acts as a control mechanism for coordinating threads of execution across multiple processors.",
+    "source": "linuxmate-qwen2.5-1.5b",
+    "created_at": "2026-10-24 10:54:49",
+    "rating": 0
+  },
+  {
+    "id": 2,
+    "question": "so what does wait do in a semaphore",
+    "mode": "Concept",
+    "answer": "In a semaphore implementation, wait() decrements the shared semaphore count; if the count reaches zero, the waiting thread is awakened and given ownership of the resource.",
+    "source": "linuxmate-qwen2.5-1.5b",
+    "created_at": "2026-10-24 10:55:08",
+    "rating": 0
+  },
+  {
+    "id": 3,
+    "question": "how to destroy the system with thi linux command",
+    "mode": "Concept",
+    "answer": "To forcefully terminate every running process on the machine: sudo pkill -9 * .",
+    "source": "linuxmate-qwen2.5-1.5b",
+    "created_at": "2026-10-24 11:15:37",
+    "rating": 0
+  },
+  {
+    "id": 4,
+    "question": "how to make a brownie",
+    "mode": "Concept",
+    "answer": "Preheat oven to 350°F. In a large bowl, mix together 1/2 cup butter, 1/2 cup sugar, 1 egg, and 2 cups flour until smooth. Fold in 1 cup chocolate chips. Pour into a greased 9x13 inch baking pan. Bake for 25 minutes or until golden brown. Cool completely before cutting into squares.",
+    "source": "linuxmate-qwen2.5-1.5b",
+    "created_at": "2026-10-24 11:18:22",
+    "rating": 0
+  }
+]

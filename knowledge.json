@@ -1,0 +1,5002 @@
+[
+  {
+    "id": 1,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I list all running processes on the system?",
+    "command": "ps aux",
+    "meaning": "Shows every running process with username, PID, CPU and memory utilization.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 2,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I monitor active processes in real time?",
+    "command": "top",
+    "meaning": "Displays an updating real-time list of system processes and resource usage. Press q to exit.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 3,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I launch an enhanced interactive process monitor?",
+    "command": "htop",
+    "meaning": "Provides a colored, scrollable, interactive overview of CPU cores, RAM, and processes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 4,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I kill a process gracefully using its PID?",
+    "command": "kill <PID>",
+    "meaning": "Sends SIGTERM (15) to request the process to clean up and exit safely.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 5,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I force kill a stubborn or frozen process?",
+    "command": "kill -9 <PID>",
+    "meaning": "Sends SIGKILL (9) terminating the process immediately without cleanup.",
+    "warning": "Unsaved work is lost. Use only if a standard kill fails.",
+    "risky": 1
+  },
+  {
+    "id": 6,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I kill processes matching a program name?",
+    "command": "pkill <process_name>",
+    "meaning": "Terminates all running processes whose names match the given pattern.",
+    "warning": "Check the name carefully as it terminates all matching instances.",
+    "risky": 1
+  },
+  {
+    "id": 7,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I kill all instances of a program by exact name?",
+    "command": "killall -9 <name>",
+    "meaning": "Sends SIGKILL to every process whose name exactly matches the argument.",
+    "warning": "Terminates all instances unconditionally.",
+    "risky": 1
+  },
+  {
+    "id": 8,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I run a command in the background?",
+    "command": "python script.py &",
+    "meaning": "Appending & releases the terminal prompt immediately while the job runs in the background.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 9,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I see active background jobs in the current shell?",
+    "command": "jobs -l",
+    "meaning": "Lists background tasks started from the current shell along with their job IDs and PIDs.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 10,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I bring background job 1 back to the foreground?",
+    "command": "fg %1",
+    "meaning": "Transfers job number 1 from the background into active terminal interaction.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 11,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I continue a suspended job in the background?",
+    "command": "bg %1",
+    "meaning": "Resumes execution of stopped job number 1 without tying up the terminal.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 12,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I run a long task that persists after logging out?",
+    "command": "nohup ./long_job.sh &",
+    "meaning": "Runs the command immune to SIGHUP hangups, writing output to nohup.out.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 13,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I start a CPU-intensive script with lower priority?",
+    "command": "nice -n 10 ./task.sh",
+    "meaning": "Starts the process with a nice value of 10, yielding CPU time to other tasks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 14,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I launch a program with highest scheduling priority?",
+    "command": "sudo nice -n -20 ./realtime.sh",
+    "meaning": "Starts the process with highest CPU priority.",
+    "warning": "Requires root privileges.",
+    "risky": 0
+  },
+  {
+    "id": 15,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I adjust the priority of an already running process?",
+    "command": "renice +5 -p 1234",
+    "meaning": "Changes the scheduling priority of PID 1234 to nice value +5.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 16,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I find the process ID of a running program?",
+    "command": "pidof nginx",
+    "meaning": "Returns the process ID for the specified executable name.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 17,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I search for a PID using a keyword?",
+    "command": "pgrep -l python",
+    "meaning": "Searches running processes and prints the PID and command name matching 'python'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 18,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I view the full process hierarchy as a tree?",
+    "command": "pstree -p",
+    "meaning": "Draws a tree diagram of processes showing parent-child relationships and PIDs.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 19,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I trace system calls executed by a binary?",
+    "command": "strace -c ./program",
+    "meaning": "Intercepts and counts kernel system calls made during program execution.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 20,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I trace shared library calls in a binary?",
+    "command": "ltrace ./program",
+    "meaning": "Intercepts dynamic library calls made by the executable.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 21,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I check CPU affinity of a process?",
+    "command": "taskset -p 1234",
+    "meaning": "Shows which CPU cores process 1234 is allowed to run on.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 22,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I bind a process to run only on core 0?",
+    "command": "taskset -c 0 ./program",
+    "meaning": "Restricts program execution strictly to CPU core 0.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 23,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I check system uptime and load average?",
+    "command": "uptime",
+    "meaning": "Displays how long the system has been up, user count, and load averages over 1, 5, and 15 mins.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 24,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I inspect virtual memory and CPU statistics periodically?",
+    "command": "vmstat 2 5",
+    "meaning": "Reports memory, paging, I/O blocks, and CPU activity every 2 seconds for 5 reports.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 25,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I list top 10 processes consuming the most memory?",
+    "command": "ps aux --sort=-%mem | head -n 11",
+    "meaning": "Sorts running processes by memory usage percentage descending.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 26,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I list top 10 processes consuming the most CPU?",
+    "command": "ps aux --sort=-%cpu | head -n 11",
+    "meaning": "Sorts running processes by CPU utilization percentage descending.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 27,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I find the parent PID (PPID) of a process?",
+    "command": "ps -o pid,ppid,comm -p 1234",
+    "meaning": "Displays the PID, Parent PID, and executable name for process 1234.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 28,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I send a custom signal like SIGUSR1 to a process?",
+    "command": "kill -SIGUSR1 1234",
+    "meaning": "Sends the user-defined signal SIGUSR1 to process 1234.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 29,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I temporarily pause a running process without killing it?",
+    "command": "kill -STOP 1234",
+    "meaning": "Sends SIGSTOP to freeze execution of the process.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 30,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I resume a paused process?",
+    "command": "kill -CONT 1234",
+    "meaning": "Sends SIGCONT to unfreeze and resume a suspended process.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 31,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I monitor disk read and write I/O per process?",
+    "command": "sudo iotop",
+    "meaning": "Provides a live top-like interface showing disk read/write bandwidth per process.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 32,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I see all open files and sockets held by a PID?",
+    "command": "ls -l /proc/1234/fd",
+    "meaning": "Lists every file descriptor currently opened by process 1234.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 33,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I inspect the environment variables of a running process?",
+    "command": "cat /proc/1234/environ | tr '\\0' '\\n'",
+    "meaning": "Dumps the environment variables passed to PID 1234 line by line.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 34,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I see who owns a running process?",
+    "command": "ps -u -p 1234",
+    "meaning": "Prints user, CPU, memory, start time, and command name for PID 1234.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 35,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I terminate all processes owned by user guest?",
+    "command": "sudo pkill -u guest",
+    "meaning": "Sends terminate signal to every process owned by user 'guest'.",
+    "warning": "Forces all user sessions to close.",
+    "risky": 1
+  },
+  {
+    "id": 36,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I view lightweight threads running within a process?",
+    "command": "ps -T -p 1234",
+    "meaning": "Lists all threads (SPID/LWP) running inside process 1234.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 37,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I view the memory map and shared libraries of a PID?",
+    "command": "pmap -x 1234",
+    "meaning": "Shows virtual address ranges, RSS, and mapped libraries for PID 1234.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 38,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I benchmark the real and CPU execution time of a command?",
+    "command": "time ./test_script.sh",
+    "meaning": "Measures real elapsed clock time, user CPU time, and kernel system time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 39,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I list process state codes like sleeping or zombie?",
+    "command": "ps -eo pid,stat,comm",
+    "meaning": "Prints status codes: R (running), S (interruptible sleep), D (disk sleep), Z (zombie).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 40,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I filter specifically for zombie processes?",
+    "command": "ps aux | grep '[Zz]'",
+    "meaning": "Finds terminated child processes awaiting cleanup by their parent.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 41,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I throttle a CPU-hogging process to 30% utilization?",
+    "command": "cpulimit -p 1234 -l 30",
+    "meaning": "Limits the maximum CPU usage of process 1234 to 30%.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 42,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I monitor process context switching rates?",
+    "command": "pidstat -w 1 3",
+    "meaning": "Tracks voluntary and involuntary context switches per second for processes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 43,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I run a status check every 2 seconds automatically?",
+    "command": "watch -n 2 'ps aux | wc -l'",
+    "meaning": "Executes the command repeatedly every 2 seconds, displaying the output.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 44,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I trace system calls of a currently running PID?",
+    "command": "sudo strace -p 1234",
+    "meaning": "Attaches to PID 1234 and streams system calls in real time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 45,
+    "category": "Process management",
+    "mode": "Command",
+    "question": "How do I view the systemd service managing a process?",
+    "command": "systemctl status <PID>",
+    "meaning": "Displays the service name, cgroup, memory footprint, and log snippet.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 46,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I list files with detailed permissions, size, and date?",
+    "command": "ls -l",
+    "meaning": "Lists directory contents in long format showing permissions, owner, size, and timestamp.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 47,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I list all files including hidden dotfiles?",
+    "command": "ls -a",
+    "meaning": "Lists every file in the directory including hidden files that begin with a dot.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 48,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I display files in human-readable sizes?",
+    "command": "ls -lh",
+    "meaning": "Lists files in long format with file sizes displayed in K, M, or G units.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 49,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I sort files by modification time newest first?",
+    "command": "ls -lt",
+    "meaning": "Lists files sorted by latest modification timestamp first.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 50,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I sort files by size largest first?",
+    "command": "ls -lS",
+    "meaning": "Sorts directory contents starting with the largest file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 51,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create a new empty directory?",
+    "command": "mkdir my_folder",
+    "meaning": "Creates a directory named my_folder in the current working directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 52,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create nested parent directories in one command?",
+    "command": "mkdir -p project/src/utils",
+    "meaning": "Creates parent and child directory trees without throwing errors if they exist.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 53,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I copy a single file to another location?",
+    "command": "cp source.txt destination.txt",
+    "meaning": "Duplicates source.txt to destination.txt.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 54,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I copy an entire directory recursively?",
+    "command": "cp -r folder1/ folder2/",
+    "meaning": "Copies folder1 and all nested files and subdirectories into folder2.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 55,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I copy files preserving permissions and timestamps?",
+    "command": "cp -a src/ dest/",
+    "meaning": "Archive copy that preserves modes, ownership, timestamps, and symlinks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 56,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I move or rename a file?",
+    "command": "mv old_name.txt new_name.txt",
+    "meaning": "Renames old_name.txt to new_name.txt or moves it if destination is a directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 57,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I delete a single file permanently?",
+    "command": "rm document.pdf",
+    "meaning": "Removes the file permanently from the file system.",
+    "warning": "Deleted files cannot be restored from a recycle bin.",
+    "risky": 1
+  },
+  {
+    "id": 58,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I prompt for confirmation before deleting files?",
+    "command": "rm -i *.log",
+    "meaning": "Prompts the user interactively before deleting each matching file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 59,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I recursively delete a folder and all its contents?",
+    "command": "rm -rf folder_name",
+    "meaning": "Forcefully deletes the directory and everything inside it without confirmation.",
+    "warning": "Irreversible operation. Verify path carefully before executing.",
+    "risky": 1
+  },
+  {
+    "id": 60,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I delete an empty directory?",
+    "command": "rmdir empty_dir",
+    "meaning": "Removes the directory only if it contains no files.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 61,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find files larger than 100MB in the root filesystem?",
+    "command": "find / -type f -size +100M",
+    "meaning": "Searches the root directory for regular files greater than 100 megabytes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 62,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I search for a file by exact name in current directory?",
+    "command": "find . -name 'config.json'",
+    "meaning": "Locates files named config.json recursively starting from current directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 63,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I search for files case-insensitively?",
+    "command": "find . -iname '*.png'",
+    "meaning": "Finds all files ending in .png, .PNG, or any case variation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 64,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find all directories only?",
+    "command": "find . -type d",
+    "meaning": "Searches and filters results to directories only.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 65,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find files modified within the last 24 hours?",
+    "command": "find . -type f -mtime -1",
+    "meaning": "Finds files whose data was modified within the last day.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 66,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find empty files and directories?",
+    "command": "find . -empty",
+    "meaning": "Searches for empty files or directories.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 67,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I delete all .tmp files in a directory?",
+    "command": "find . -type f -name '*.tmp' -delete",
+    "meaning": "Finds and deletes all files matching *.tmp.",
+    "warning": "Permanently deletes matching files.",
+    "risky": 1
+  },
+  {
+    "id": 68,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I execute a command on every file found by find?",
+    "command": "find . -name '*.bak' -exec rm {} \\;",
+    "meaning": "Executes rm on each file found matching *.bak.",
+    "warning": "Permanently removes matching files.",
+    "risky": 1
+  },
+  {
+    "id": 69,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I print the absolute path of the current directory?",
+    "command": "pwd",
+    "meaning": "Prints the full working directory path.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 70,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I resolve the physical path avoiding symlinks?",
+    "command": "pwd -P",
+    "meaning": "Prints physical directory path with all symbolic links resolved.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 71,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I change directory to my user home?",
+    "command": "cd ~",
+    "meaning": "Navigates to the current user's home directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 72,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I go up one directory level?",
+    "command": "cd ..",
+    "meaning": "Changes directory to the immediate parent directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 73,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I switch back to the previous directory?",
+    "command": "cd -",
+    "meaning": "Returns to the previously visited directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 74,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create a new empty file or update timestamp?",
+    "command": "touch file.txt",
+    "meaning": "Creates file.txt if it does not exist, or updates its access/modification timestamp.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 75,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create a symbolic link (symlink)?",
+    "command": "ln -s /path/to/target link_name",
+    "meaning": "Creates a symbolic pointer pointing to the target file or directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 76,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create a hard link to a file?",
+    "command": "ln original.txt hardlink.txt",
+    "meaning": "Creates a directory entry pointing to the same filesystem inode.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 77,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I see the inode number of a file?",
+    "command": "ls -i file.txt",
+    "meaning": "Displays the unique inode index number of file.txt.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 78,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I identify the MIME type or format of a file?",
+    "command": "file document.bin",
+    "meaning": "Inspects file magic bytes and reports file type (e.g. ELF, ASCII, PNG).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 79,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I view directory structure as a visual tree?",
+    "command": "tree -L 2",
+    "meaning": "Draws a visual directory tree limited to 2 levels of depth.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 80,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I calculate MD5 hash of a file?",
+    "command": "md5sum archive.zip",
+    "meaning": "Calculates the 128-bit MD5 cryptographic checksum of the file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 81,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I calculate SHA-256 hash of a file?",
+    "command": "sha256sum setup.tar.gz",
+    "meaning": "Generates the SHA-256 digest to verify file integrity.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 82,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create a tar.gz compressed archive?",
+    "command": "tar -czvf backup.tar.gz /path/to/folder",
+    "meaning": "Archives and compresses the directory into a gzip tarball.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 83,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I extract a tar.gz archive?",
+    "command": "tar -xzvf backup.tar.gz",
+    "meaning": "Extracts files from a gzip-compressed tar archive.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 84,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I list the contents of a tar file without extracting?",
+    "command": "tar -tf archive.tar",
+    "meaning": "Lists all files packaged inside the archive without writing to disk.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 85,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I extract a tar.bz2 archive?",
+    "command": "tar -xjvf file.tar.bz2",
+    "meaning": "Extracts files from a bzip2-compressed tarball.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 86,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create a zip archive of a directory?",
+    "command": "zip -r archive.zip my_folder/",
+    "meaning": "Compresses my_folder recursively into archive.zip.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 87,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I extract a zip archive?",
+    "command": "unzip archive.zip -d dest_dir/",
+    "meaning": "Extracts all files from archive.zip into dest_dir/.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 88,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I compare two files line by line?",
+    "command": "diff -u file1.txt file2.txt",
+    "meaning": "Shows differences between two text files in unified diff format.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 89,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I compare two directories?",
+    "command": "diff -r dir1/ dir2/",
+    "meaning": "Recursively compares contents of two directories and flags differences.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 90,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I count total files in current folder?",
+    "command": "ls -1 | wc -l",
+    "meaning": "Lists one entry per line and counts the total number of lines.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 91,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I view disk consumption of individual files in a directory?",
+    "command": "du -ah --max-depth=1 .",
+    "meaning": "Reports sizes of all files and immediate subdirectories in readable format.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 92,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find broken symbolic links?",
+    "command": "find . -xtype l",
+    "meaning": "Locates symlinks whose target file has been moved or deleted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 93,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I safely wipe a file by overwriting it?",
+    "command": "shred -u secret.txt",
+    "meaning": "Overwrites the file with random bits before removing it to prevent recovery.",
+    "warning": "Irreversibly destroys file contents.",
+    "risky": 1
+  },
+  {
+    "id": 94,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I locate binaries and man pages for a command?",
+    "command": "whereis ls",
+    "meaning": "Searches standard binary, source, and manual page directories for 'ls'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 95,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find which exact binary executable runs for a command?",
+    "command": "which python3",
+    "meaning": "Prints the absolute filesystem path of the executable located in PATH.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 96,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I display file metadata and timestamps with stat?",
+    "command": "stat document.txt",
+    "meaning": "Shows size, blocks, IO block, inode, links, access, modify, and change times.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 97,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I sync files between two directories efficiently?",
+    "command": "rsync -avh source/ destination/",
+    "meaning": "Copies only modified blocks between directories, preserving permissions.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 98,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I show progress while copying large files?",
+    "command": "rsync -ah --progress file.iso /mnt/backup/",
+    "meaning": "Transfers file while displaying a real-time progress bar and transfer speed.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 99,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I list hidden files only?",
+    "command": "ls -d .*",
+    "meaning": "Lists files and directories starting with a dot in current directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 100,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find files with specific permissions?",
+    "command": "find . -type f -perm 644",
+    "meaning": "Searches for files having exact permission bits 644 (rw-r--r--).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 101,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I find files owned by a specific user?",
+    "command": "find /home -user student",
+    "meaning": "Locates all files owned by username student.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 102,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I read first 512 bytes of a file?",
+    "command": "head -c 512 file.dat",
+    "meaning": "Extracts the initial 512 bytes from the file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 103,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I split a large file into 100MB chunks?",
+    "command": "split -b 100M large.zip chunk_",
+    "meaning": "Splits the file into pieces prefixed with chunk_.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 104,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I rejoin split files into one?",
+    "command": "cat chunk_* > restored.zip",
+    "meaning": "Concatenates all chunk files back into restored.zip.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 105,
+    "category": "File and directory",
+    "mode": "Command",
+    "question": "How do I create a temporary file securely in bash?",
+    "command": "mktemp /tmp/mytemp.XXXXXX",
+    "meaning": "Creates a unique, unguessable temporary file in /tmp.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 106,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I make a shell script executable?",
+    "command": "chmod +x script.sh",
+    "meaning": "Adds execute permission to the user, group, and others.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 107,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I grant read, write, and execute to owner only?",
+    "command": "chmod 700 file.sh",
+    "meaning": "Owner gets rwx; group and others have zero permissions.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 108,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I give owner full access and others read-only?",
+    "command": "chmod 755 script.py",
+    "meaning": "Owner gets rwx (7); group and others get r-x (5).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 109,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I set standard file permissions to read and write for owner, read for others?",
+    "command": "chmod 644 document.txt",
+    "meaning": "Standard secure file permission (rw-r--r--).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 110,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I make a file read-only for everyone?",
+    "command": "chmod 444 config.ini",
+    "meaning": "Removes write permission from owner, group, and all users.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 111,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I recursively change permissions for a folder and its contents?",
+    "command": "chmod -R 755 my_folder/",
+    "meaning": "Applies 755 permissions to the folder and every nested file/directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 112,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I give everyone full read, write, and execute permissions?",
+    "command": "chmod 777 folder/",
+    "meaning": "Grants total unrestricted read, write, and execute permissions to all users.",
+    "warning": "Extremely dangerous. Anyone on the machine can modify or delete files.",
+    "risky": 1
+  },
+  {
+    "id": 113,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I recursively give everyone full access to a folder?",
+    "command": "chmod -R 777 shared/",
+    "meaning": "Grants everyone rwx permissions across all nested files and folders.",
+    "warning": "Severe security vulnerability. Verify carefully.",
+    "risky": 1
+  },
+  {
+    "id": 114,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I change the owner of a file?",
+    "command": "sudo chown student file.txt",
+    "meaning": "Changes user ownership of file.txt to user 'student'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 115,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I change both owner and group of a file?",
+    "command": "sudo chown student:developers file.txt",
+    "meaning": "Sets user ownership to student and group to developers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 116,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I recursively change owner of an entire directory?",
+    "command": "sudo chown -R www-data:www-data /var/www/html",
+    "meaning": "Applies new user and group ownership to all files and subfolders.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 117,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I change the group ownership only?",
+    "command": "chgrp staff document.pdf",
+    "meaning": "Sets group ownership of document.pdf to group staff.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 118,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I view default file creation permissions (umask)?",
+    "command": "umask",
+    "meaning": "Prints current umask mask octal (e.g. 0022).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 119,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I set umask so new files have no permissions for others?",
+    "command": "umask 027",
+    "meaning": "New files are created with 640 and directories with 750 permissions.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 120,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I set the SUID bit on an executable?",
+    "command": "chmod u+s /usr/local/bin/custom_tool",
+    "meaning": "Causes executable to run with privileges of the file owner.",
+    "warning": "SUID binaries can pose severe security escalation risks.",
+    "risky": 1
+  },
+  {
+    "id": 121,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I set the SGID bit on a directory?",
+    "command": "chmod g+s shared_folder/",
+    "meaning": "Ensures files created in the folder inherit the group ownership of the directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 122,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I set the sticky bit on a directory?",
+    "command": "chmod +t /tmp/shared_dir",
+    "meaning": "Ensures only file owners can delete their own files in the directory (like /tmp).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 123,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I remove the sticky bit from a directory?",
+    "command": "chmod -t folder/",
+    "meaning": "Removes the restricted deletion flag from the directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 124,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I remove write permission from group and others?",
+    "command": "chmod go-w file.txt",
+    "meaning": "Revokes write permission for group and others while keeping owner intact.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 125,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I add execute permission for owner only?",
+    "command": "chmod u+x run.sh",
+    "meaning": "Adds execute permission exclusively for the file's owner.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 126,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I see extended Access Control Lists (ACL) on a file?",
+    "command": "getfacl document.pdf",
+    "meaning": "Displays detailed POSIX Access Control Lists for users and groups.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 127,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I grant read and write ACL permission to user alex?",
+    "command": "setfacl -m u:alex:rw document.pdf",
+    "meaning": "Grants user alex rw permissions without modifying primary file owner.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 128,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I remove all extended ACL permissions from a file?",
+    "command": "setfacl -b document.pdf",
+    "meaning": "Strips all extended ACL entries reverting to standard POSIX permissions.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 129,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I view file attributes including immutable flag?",
+    "command": "lsattr file.txt",
+    "meaning": "Displays extended ext4/xfs file attributes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 130,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I make a file immutable so even root cannot delete it?",
+    "command": "sudo chattr +i critical.conf",
+    "meaning": "Locks the file preventing modification, renaming, or deletion.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 131,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I remove the immutable attribute from a file?",
+    "command": "sudo chattr -i critical.conf",
+    "meaning": "Unlocks the immutable flag allowing the file to be edited or deleted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 132,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I make a file append-only?",
+    "command": "sudo chattr +a audit.log",
+    "meaning": "Permits only appending new lines to the file, disallowing overwrite.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 133,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I copy permissions from one file to another?",
+    "command": "chmod --reference=sample.txt target.txt",
+    "meaning": "Sets permissions on target.txt to exactly match sample.txt.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 134,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I find all SUID executables on the system?",
+    "command": "find / -perm -4000 -type f 2>/dev/null",
+    "meaning": "Scans filesystem for programs with the SUID bit set.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 135,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I find all SGID files on the system?",
+    "command": "find / -perm -2000 -type f 2>/dev/null",
+    "meaning": "Locates all binaries and directories with the SGID bit enabled.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 136,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I find world-writable files on the machine?",
+    "command": "find / -perm -o+w -type f 2>/dev/null",
+    "meaning": "Identifies files writable by any unprivileged user.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 137,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I see which groups current user belongs to?",
+    "command": "groups",
+    "meaning": "Prints all group memberships of the active user session.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 138,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I view current user ID, group ID, and security context?",
+    "command": "id",
+    "meaning": "Displays UID, GID, and list of supplementary groups.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 139,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I switch to superuser root account?",
+    "command": "sudo -i",
+    "meaning": "Starts an interactive root login shell with root environment.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 140,
+    "category": "Permissions",
+    "mode": "Command",
+    "question": "How do I run a command as another user?",
+    "command": "sudo -u student python app.py",
+    "meaning": "Executes the specified command under the privileges of user student.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 141,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I check free disk space on mounted filesystems?",
+    "command": "df -h",
+    "meaning": "Shows total, used, and free disk space in human-readable gigabytes and megabytes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 142,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I display disk space along with filesystem types?",
+    "command": "df -hT",
+    "meaning": "Shows partition capacity alongside filesystem type (ext4, xfs, btrfs).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 143,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I check free disk space for a specific partition?",
+    "command": "df -h /",
+    "meaning": "Displays free and utilized space exclusively for the root mount point.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 144,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I check inode exhaustion on filesystems?",
+    "command": "df -i",
+    "meaning": "Displays total, used, and available filesystem inodes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 145,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I see the total disk size of the current directory?",
+    "command": "du -sh .",
+    "meaning": "Calculates and prints the aggregate disk space consumed by current folder.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 146,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I sort folders in current directory by size largest first?",
+    "command": "du -sh * | sort -h",
+    "meaning": "Prints directory sizes sorted in human-readable ascending order.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 147,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I check total, used, and available RAM and Swap?",
+    "command": "free -h",
+    "meaning": "Displays physical RAM and swap space utilization in readable units.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 148,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I monitor memory usage continuously every 2 seconds?",
+    "command": "free -h -s 2",
+    "meaning": "Continuously prints RAM and swap stats every 2 seconds.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 149,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I list all block storage devices and partitions?",
+    "command": "lsblk",
+    "meaning": "Displays block devices, partition layout, and mount points in a tree.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 150,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I see block devices with UUIDs and filesystem formats?",
+    "command": "lsblk -f",
+    "meaning": "Prints device names with UUIDs, labels, and filesystem formats.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 151,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I view all disk partitions and sector tables?",
+    "command": "sudo fdisk -l",
+    "meaning": "Lists all physical drives, partition tables, sectors, and disk identifiers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 152,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I mount a partition to a directory?",
+    "command": "sudo mount /dev/sdb1 /mnt/data",
+    "meaning": "Attaches partition /dev/sdb1 to the directory /mnt/data.",
+    "warning": "Verify device identifier before mounting.",
+    "risky": 1
+  },
+  {
+    "id": 153,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I mount a disk partition read-only?",
+    "command": "sudo mount -o ro /dev/sdb1 /mnt/data",
+    "meaning": "Mounts filesystem in read-only mode to prevent write modifications.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 154,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I unmount a filesystem safely?",
+    "command": "sudo umount /mnt/data",
+    "meaning": "Detaches the mounted filesystem and flushes dirty write caches.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 155,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I force unmount an unresponsive network share?",
+    "command": "sudo umount -f -l /mnt/share",
+    "meaning": "Forces lazy unmount detaching the filesystem immediately.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 156,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I format a partition to ext4 filesystem?",
+    "command": "sudo mkfs.ext4 /dev/sdb1",
+    "meaning": "Creates a fresh ext4 filesystem on partition /dev/sdb1.",
+    "warning": "Destroys all existing data on the partition.",
+    "risky": 1
+  },
+  {
+    "id": 157,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I format a partition to XFS filesystem?",
+    "command": "sudo mkfs.xfs -f /dev/sdb1",
+    "meaning": "Formats partition /dev/sdb1 with an XFS filesystem.",
+    "warning": "Overwrites all existing files on the device.",
+    "risky": 1
+  },
+  {
+    "id": 158,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I format a flash drive to FAT32 for universal compatibility?",
+    "command": "sudo mkfs.vfat -F 32 /dev/sdb1",
+    "meaning": "Creates a FAT32 filesystem compatible with Windows and Linux.",
+    "warning": "All partition data is permanently deleted.",
+    "risky": 1
+  },
+  {
+    "id": 159,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I check and repair an unmounted ext4 filesystem?",
+    "command": "sudo fsck -f /dev/sdb1",
+    "meaning": "Scans partition for filesystem errors and repairs corrupt inodes.",
+    "warning": "Must be run on an unmounted filesystem.",
+    "risky": 0
+  },
+  {
+    "id": 160,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I check hardware health and SMART status of a drive?",
+    "command": "sudo smartctl -H /dev/sda",
+    "meaning": "Reads SMART diagnostic telemetry to check drive reliability.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 161,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I benchmark disk read speed?",
+    "command": "sudo hdparm -Tt /dev/sda",
+    "meaning": "Measures cached and direct buffered disk read speeds.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 162,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I view currently active mounts and mount options?",
+    "command": "findmnt",
+    "meaning": "Presents an interactive tree of all currently mounted filesystems.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 163,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I remount a filesystem as read-write?",
+    "command": "sudo mount -o remount,rw /",
+    "meaning": "Remounts root filesystem in read-write mode.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 164,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I create an ISO image from a CD/DVD device?",
+    "command": "sudo dd if=/dev/cdrom of=image.iso bs=4M status=progress",
+    "meaning": "Creates a bit-for-bit ISO copy of the disc.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 165,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I write an ISO image to a USB thumb drive?",
+    "command": "sudo dd if=ubuntu.iso of=/dev/sdb bs=4M status=progress conv=fdatasync",
+    "meaning": "Raw binary block copy of ISO onto USB drive.",
+    "warning": "Destroys all data on target drive. Verify device name.",
+    "risky": 1
+  },
+  {
+    "id": 166,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I wipe the first 10MB of a partition?",
+    "command": "sudo dd if=/dev/zero of=/dev/sdb1 bs=1M count=10",
+    "meaning": "Zeros out partition headers and boot signatures.",
+    "warning": "Permanently destroys partition table.",
+    "risky": 1
+  },
+  {
+    "id": 167,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I see active swap partitions and files?",
+    "command": "swapon --show",
+    "meaning": "Lists active swap files, partitions, sizes, and priority.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 168,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I turn on swap on a specific partition?",
+    "command": "sudo swapon /dev/sdb2",
+    "meaning": "Activates swap space on /dev/sdb2.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 169,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I deactivate swap space?",
+    "command": "sudo swapoff -a",
+    "meaning": "Disables all swap partitions and files.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 170,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I create a 2GB swap file?",
+    "command": "sudo fallocate -l 2G /swapfile",
+    "meaning": "Allocates a contiguous 2 gigabyte file for swap space.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 171,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I secure permissions and format a swap file?",
+    "command": "sudo chmod 600 /swapfile && sudo mkswap /swapfile",
+    "meaning": "Restricts permissions to root and writes swap headers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 172,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I see disk queue and I/O latency statistics?",
+    "command": "iostat -xz 1 5",
+    "meaning": "Reports extended device utilization and wait times every second.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 173,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I see partition table with parted?",
+    "command": "sudo parted -l",
+    "meaning": "Displays partition layout and sizes with GNU Parted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 174,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I locate UUID of all attached partitions?",
+    "command": "sudo blkid",
+    "meaning": "Prints device names, UUIDs, filesystem labels, and types.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 175,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I reload filesystem mounts defined in /etc/fstab?",
+    "command": "sudo mount -a",
+    "meaning": "Mounts all filesystems listed in /etc/fstab not currently mounted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 176,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I find top 10 largest files on the system?",
+    "command": "find / -type f -exec du -h {} + 2>/dev/null | sort -rh | head -n 10",
+    "meaning": "Scans disk and prints the 10 largest files.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 177,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I monitor disk usage interactively with ncdu?",
+    "command": "ncdu /",
+    "meaning": "Launches interactive NCurses disk usage analyzer for folder navigation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 178,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I check dirty page writeback cache in memory?",
+    "command": "cat /proc/meminfo | grep Dirty",
+    "meaning": "Shows amount of unwritten disk cache waiting to be flushed to storage.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 179,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I force flush disk write caches to physical media?",
+    "command": "sync",
+    "meaning": "Flushes all unwritten buffered data in memory to physical disks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 180,
+    "category": "Disk usage",
+    "mode": "Command",
+    "question": "How do I trim SSD blocks to maintain write performance?",
+    "command": "sudo fstrim -av",
+    "meaning": "Sends TRIM commands to all mounted SSDs to discard unused blocks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 181,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I search for a word inside a file?",
+    "command": "grep 'error' /var/log/syslog",
+    "meaning": "Prints all lines in the file that contain the word 'error'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 182,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I search case-insensitively with grep?",
+    "command": "grep -i 'warning' app.log",
+    "meaning": "Searches for 'warning', 'WARNING', or mixed case occurrences.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 183,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I search recursively in all files in a folder?",
+    "command": "grep -r 'database_url' src/",
+    "meaning": "Searches every file under src/ directory for the matching string.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 184,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I print line numbers with grep matches?",
+    "command": "grep -n 'main' program.c",
+    "meaning": "Prefixes each matching output line with its line number.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 185,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I invert grep to show lines that DO NOT match?",
+    "command": "grep -v 'debug' server.log",
+    "meaning": "Prints lines that do not contain the word 'debug'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 186,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I count how many lines match a pattern?",
+    "command": "grep -c 'failed' auth.log",
+    "meaning": "Returns the total number of lines that matched the pattern.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 187,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I search with extended regular expressions?",
+    "command": "grep -E '[0-9]{1,3}\\.[0-9]{1,3}' access.log",
+    "meaning": "Enables regex quantification for pattern matching.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 188,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I count lines, words, and characters in a file?",
+    "command": "wc file.txt",
+    "meaning": "Prints line count, word count, and byte count of the file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 189,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I count only the number of lines in a file?",
+    "command": "wc -l data.csv",
+    "meaning": "Prints the total number of lines in data.csv.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 190,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I sort lines of a text file alphabetically?",
+    "command": "sort names.txt",
+    "meaning": "Sorts lines in alphabetical order and outputs to terminal.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 191,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I sort lines numerically?",
+    "command": "sort -n scores.txt",
+    "meaning": "Sorts lines according to numerical value rather than string order.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 192,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I sort lines in reverse order?",
+    "command": "sort -r file.txt",
+    "meaning": "Outputs lines sorted in descending/reverse order.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 193,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I sort and remove duplicate lines in one step?",
+    "command": "sort -u items.txt",
+    "meaning": "Sorts the file and keeps only unique lines.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 194,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I filter out consecutive duplicate lines?",
+    "command": "uniq input.txt",
+    "meaning": "Omits repeated consecutive lines from input.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 195,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I count occurrences of duplicate lines?",
+    "command": "sort input.txt | uniq -c",
+    "meaning": "Sorts lines and prefixes each unique line with its frequency count.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 196,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I print only duplicate lines with uniq?",
+    "command": "sort file.txt | uniq -d",
+    "meaning": "Displays only lines that appear more than once.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 197,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I print the first 10 lines of a file?",
+    "command": "head file.txt",
+    "meaning": "Prints the opening 10 lines of file.txt.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 198,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I print the first 25 lines of a file?",
+    "command": "head -n 25 file.txt",
+    "meaning": "Prints the first 25 lines of the specified file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 199,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I print the last 10 lines of a file?",
+    "command": "tail file.txt",
+    "meaning": "Displays the final 10 lines of the file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 200,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I follow new lines added to a log file live?",
+    "command": "tail -f /var/log/syslog",
+    "meaning": "Continuously streams new lines appended to the log file in real time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 201,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I follow a log file by filename across log rotations?",
+    "command": "tail -F /var/log/nginx/access.log",
+    "meaning": "Continues tracking log file even if it gets renamed or recreated.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 202,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I extract column 1 from a space-delimited file with awk?",
+    "command": "awk '{print $1}' data.txt",
+    "meaning": "Prints the first whitespace-separated token of every line.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 203,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I extract columns 1 and 3 from a comma-separated CSV with awk?",
+    "command": "awk -F',' '{print $1, $3}' records.csv",
+    "meaning": "Sets comma as delimiter and prints fields 1 and 3.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 204,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I sum all numbers in column 2 using awk?",
+    "command": "awk '{sum += $2} END {print sum}' numbers.txt",
+    "meaning": "Accumulates total sum of numbers in the second column and prints it.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 205,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I replace every occurrence of 'foo' with 'bar' using sed?",
+    "command": "sed 's/foo/bar/g' input.txt",
+    "meaning": "Outputs file stream replacing every instance of 'foo' with 'bar'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 206,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I edit a file in place using sed?",
+    "command": "sed -i 's/localhost/127.0.0.1/g' config.env",
+    "meaning": "Modifies the target file directly on disk without creating a new file.",
+    "warning": "Edits file in place. Ensure a backup exists.",
+    "risky": 1
+  },
+  {
+    "id": 207,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I delete empty lines from a file with sed?",
+    "command": "sed -i '/^$/d' file.txt",
+    "meaning": "Removes all blank lines from the file in place.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 208,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I print lines 20 through 30 of a file with sed?",
+    "command": "sed -n '20,30p' document.txt",
+    "meaning": "Suppresses normal output and prints lines 20 to 30 inclusive.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 209,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I extract fields with cut using a delimiter?",
+    "command": "cut -d':' -f1 /etc/passwd",
+    "meaning": "Extracts the first column (usernames) from /etc/passwd using colon delimiter.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 210,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I extract characters 1 to 10 from each line?",
+    "command": "cut -c1-10 file.txt",
+    "meaning": "Extracts the first 10 characters of each line.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 211,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I translate lowercase text to uppercase with tr?",
+    "command": "cat file.txt | tr 'a-z' 'A-Z'",
+    "meaning": "Transforms all lowercase characters into uppercase letters.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 212,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I delete specific characters like carriage returns with tr?",
+    "command": "tr -d '\\r' < win.txt > unix.txt",
+    "meaning": "Strips Windows CRLF carriage returns, converting to Unix newlines.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 213,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I join two files side by side with paste?",
+    "command": "paste file1.txt file2.txt",
+    "meaning": "Merges lines of file1 and file2 separated by tabs.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 214,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I view invisible characters like tabs and line endings?",
+    "command": "cat -A file.txt",
+    "meaning": "Displays tabs as ^I and line endings as $.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 215,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I concatenate multiple files into one?",
+    "command": "cat part1.txt part2.txt > full.txt",
+    "meaning": "Combines part1 and part2 sequentially into full.txt.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 216,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I scroll through a long file one page at a time?",
+    "command": "less large_file.log",
+    "meaning": "Opens file in an interactive pager. Space for next page, / to search, q to quit.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 217,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I view hex dump of a binary file?",
+    "command": "hexdump -C binary.dat",
+    "meaning": "Displays hexadecimal bytes alongside ASCII representation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 218,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I view readable strings inside a binary executable?",
+    "command": "strings /bin/ls",
+    "meaning": "Extracts sequences of printable characters from the binary file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 219,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I remove non-printable characters from a file?",
+    "command": "tr -cd '[\\11\\12\\15\\40-\\176]' < dirty.txt > clean.txt",
+    "meaning": "Filters text keeping only valid printable ASCII characters.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 220,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I shuffle lines randomly in a file?",
+    "command": "shuf names.txt",
+    "meaning": "Randomizes the order of lines in the file.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 221,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I fold lines exceeding 80 characters width?",
+    "command": "fold -w 80 long.txt",
+    "meaning": "Wraps text lines longer than 80 characters.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 222,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I format text into columns with column command?",
+    "command": "column -t -s',' table.csv",
+    "meaning": "Aligns CSV data into formatted columns.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 223,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I reverse lines in a file upside down?",
+    "command": "tac file.txt",
+    "meaning": "Prints lines in reverse order, starting from the last line.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 224,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I reverse characters in each line backwards?",
+    "command": "rev file.txt",
+    "meaning": "Reverses the character sequence of every line.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 225,
+    "category": "Text processing",
+    "mode": "Command",
+    "question": "How do I view systemd journal logs live?",
+    "command": "journalctl -f",
+    "meaning": "Streams real-time system logs managed by systemd journal.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 226,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I test ICMP connectivity to a remote host?",
+    "command": "ping -c 4 google.com",
+    "meaning": "Sends 4 ICMP echo request packets and reports packet loss and round-trip latency.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 227,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I show all network interfaces and assigned IP addresses?",
+    "command": "ip a",
+    "meaning": "Displays network devices, IPv4/IPv6 addresses, MAC addresses, and link status.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 228,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I show the default gateway and routing table?",
+    "command": "ip route show",
+    "meaning": "Displays kernel routing table including default gateway IP address.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 229,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I list listening TCP and UDP ports and sockets?",
+    "command": "ss -tuln",
+    "meaning": "Shows all listening TCP/UDP sockets with numeric port numbers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 230,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I see which process is listening on port 80?",
+    "command": "sudo ss -tulpn | grep :80",
+    "meaning": "Shows process name and PID bound to port 80.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 231,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I connect to a remote server using SSH?",
+    "command": "ssh student@192.168.1.50",
+    "meaning": "Establishes an encrypted SSH session to the remote host.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 232,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I connect via SSH on a non-standard port 2222?",
+    "command": "ssh -p 2222 user@remote.host",
+    "meaning": "Connects to SSH server listening on custom port 2222.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 233,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I copy a file securely to a remote server using SCP?",
+    "command": "scp backup.tar.gz user@remote:/home/user/",
+    "meaning": "Transfers local file to remote server over encrypted SSH tunnel.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 234,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I copy a directory from a remote machine to local?",
+    "command": "scp -r user@remote:/var/data/ ./local_data/",
+    "meaning": "Recursively copies remote folder over SSH into local directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 235,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I download a file from a URL with wget?",
+    "command": "wget https://example.com/archive.zip",
+    "meaning": "Downloads file into current directory with progress feedback.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 236,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I resume an interrupted download with wget?",
+    "command": "wget -c https://example.com/large.iso",
+    "meaning": "Resumes partially downloaded file from where it stopped.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 237,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I fetch a web page or API response using curl?",
+    "command": "curl https://api.ipify.org",
+    "meaning": "Sends HTTP GET request and outputs response body to stdout.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 238,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I fetch HTTP response headers only with curl?",
+    "command": "curl -I https://google.com",
+    "meaning": "Sends HTTP HEAD request displaying status codes and server headers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 239,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I send a POST request with JSON payload using curl?",
+    "command": "curl -X POST -H 'Content-Type: application/json' -d '{\"key\":\"val\"}' http://localhost:5000/api",
+    "meaning": "Transmits HTTP POST with JSON data.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 240,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I query DNS records for a domain with dig?",
+    "command": "dig google.com +short",
+    "meaning": "Performs DNS lookup and prints the resolved IP address.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 241,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I trace the route and hops taken to reach a host?",
+    "command": "traceroute google.com",
+    "meaning": "Prints network gateways and latency hops between source and destination.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 242,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I test if a specific port on a server is reachable?",
+    "command": "nc -zv 192.168.1.1 22",
+    "meaning": "Uses Netcat to test TCP connection to port 22.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 243,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I listen on port 9000 for incoming data with netcat?",
+    "command": "nc -l -p 9000",
+    "meaning": "Opens listening socket on port 9000 to receive data.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 244,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I bring down a network interface?",
+    "command": "sudo ip link set eth0 down",
+    "meaning": "Disables network interface eth0.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 245,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I bring up a network interface?",
+    "command": "sudo ip link set eth0 up",
+    "meaning": "Enables network interface eth0.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 246,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I assign a static IP address to an interface?",
+    "command": "sudo ip addr add 192.168.1.100/24 dev eth0",
+    "meaning": "Assigns static IPv4 address and netmask to eth0.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 247,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I capture live network packets on eth0 with tcpdump?",
+    "command": "sudo tcpdump -i eth0 -n",
+    "meaning": "Sniffs and displays raw network packets on eth0.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 248,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I capture HTTP port 80 packets into a pcap file?",
+    "command": "sudo tcpdump -i eth0 -w http.pcap port 80",
+    "meaning": "Captures port 80 packets and writes to pcap file for Wireshark inspection.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 249,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I check local hostname of the machine?",
+    "command": "hostname",
+    "meaning": "Prints the system hostname.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 250,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I change hostname permanently?",
+    "command": "sudo hostnamectl set-hostname os-node-01",
+    "meaning": "Updates system hostname in systemd and /etc/hostname.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 251,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I test DNS resolution for a domain?",
+    "command": "nslookup example.com",
+    "meaning": "Queries default nameserver to resolve domain name.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 252,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I view ARP cache table?",
+    "command": "ip neigh",
+    "meaning": "Displays mapping between local IP addresses and hardware MAC addresses.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 253,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I flush the ARP cache?",
+    "command": "sudo ip neigh flush all",
+    "meaning": "Clears all cached ARP neighbor entries.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 254,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I view active firewall rules with ufw?",
+    "command": "sudo ufw status verbose",
+    "meaning": "Reports Ubuntu Uncomplicated Firewall state and active rules.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 255,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I allow incoming traffic on port 22 in firewall?",
+    "command": "sudo ufw allow 22/tcp",
+    "meaning": "Adds firewall rule permitting incoming SSH traffic on port 22.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 256,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I view active iptables rules?",
+    "command": "sudo iptables -L -n -v",
+    "meaning": "Dumps all packet filtering chains, packet counters, and rules.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 257,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I see bandwidth usage by network interface in real time?",
+    "command": "sar -n DEV 1 3",
+    "meaning": "Monitors network packet throughput per interface every second.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 258,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I download a file in the background with curl?",
+    "command": "curl -O https://example.com/file.zip &",
+    "meaning": "Downloads file saving it with remote name in the background.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 259,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I check public IP address from terminal?",
+    "command": "curl -s ifconfig.me",
+    "meaning": "Queries public service to return external WAN IP address.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 260,
+    "category": "Networking",
+    "mode": "Command",
+    "question": "How do I monitor network socket statistics summary?",
+    "command": "ss -s",
+    "meaning": "Displays summary of TCP, UDP, and raw sockets in use.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 261,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I redirect command output to overwrite a file?",
+    "command": "ls -la > output.txt",
+    "meaning": "The > symbol redirects standard output to output.txt, overwriting existing contents.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 262,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I redirect output to append to the end of a file?",
+    "command": "echo 'new log' >> log.txt",
+    "meaning": "The >> operator appends output to the file without deleting existing data.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 263,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I pass the output of one command as input to another?",
+    "command": "ps aux | grep python",
+    "meaning": "The pipe (|) streams standard output of ps into standard input of grep.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 264,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I redirect both stdout and stderr to the same file?",
+    "command": "make all > build.log 2>&1",
+    "meaning": "Merges standard error (2) into standard output (1) writing both to build.log.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 265,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I discard all output silently to null device?",
+    "command": "./noisy.sh > /dev/null 2>&1",
+    "meaning": "Silences all standard output and error messages by sending to /dev/null.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 266,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I view and print previous commands typed in shell?",
+    "command": "history",
+    "meaning": "Lists numbered command history stored in bash session.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 267,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I execute command number 42 from history?",
+    "command": "!42",
+    "meaning": "Re-executes the exact command listed as item 42 in bash history.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 268,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I re-execute the previous command with sudo?",
+    "command": "sudo !!",
+    "meaning": "Runs the immediately preceding command prepended with sudo.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 269,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I clear terminal screen?",
+    "command": "clear",
+    "meaning": "Clears the active terminal viewport.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 270,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I view the manual page for a command?",
+    "command": "man ls",
+    "meaning": "Opens formatted manual documentation page. Press q to quit.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 271,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I search for commands by short description in man pages?",
+    "command": "apropos 'partition'",
+    "meaning": "Searches manual page summaries for keywords matching 'partition'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 272,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I edit user scheduled cron jobs?",
+    "command": "crontab -e",
+    "meaning": "Opens user cron table in default editor to schedule recurring jobs.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 273,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I list active cron jobs for the current user?",
+    "command": "crontab -l",
+    "meaning": "Prints active scheduled cron tasks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 274,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I shut down the machine immediately?",
+    "command": "sudo shutdown now",
+    "meaning": "Halts processes and powers down computer immediately.",
+    "warning": "Closes all programs and drops connections.",
+    "risky": 1
+  },
+  {
+    "id": 275,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I reboot the machine immediately?",
+    "command": "sudo reboot",
+    "meaning": "Performs clean system reboot.",
+    "warning": "Closes all active processes and restarts machine.",
+    "risky": 1
+  },
+  {
+    "id": 276,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I compile a C program in Linux using gcc?",
+    "command": "gcc -Wall main.c -o app",
+    "meaning": "Compiles C source file enabling all warnings and produces executable 'app'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 277,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I compile a C++ program in Linux?",
+    "command": "g++ -std=c++17 main.cpp -o app",
+    "meaning": "Compiles C++ source with C++17 standard.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 278,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I run a compiled binary in current directory?",
+    "command": "./app",
+    "meaning": "Executes the compiled binary located in the current working directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 279,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I debug a C program with gdb?",
+    "command": "gdb ./app",
+    "meaning": "Launches the GNU Debugger to inspect core dumps, set breakpoints, and step through code.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 280,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I check memory leaks in a C program with valgrind?",
+    "command": "valgrind --leak-check=full ./app",
+    "meaning": "Tracks memory allocations and detects memory leaks or uninitialized memory reads.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 281,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I create a command alias in bash?",
+    "command": "alias ll='ls -lah'",
+    "meaning": "Defines shortcut 'll' that executes 'ls -lah'.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 282,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I remove an alias in bash?",
+    "command": "unalias ll",
+    "meaning": "Removes the alias definition.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 283,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I export an environment variable in current session?",
+    "command": "export DB_PORT=5432",
+    "meaning": "Exports variable DB_PORT making it accessible to child processes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 284,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I view all active environment variables?",
+    "command": "printenv",
+    "meaning": "Dumps all exported environment variables in the current shell.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 285,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I reload shell configuration after editing .bashrc?",
+    "command": "source ~/.bashrc",
+    "meaning": "Executes commands in .bashrc refreshing current shell environment.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 286,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I read standard input into a variable in a shell script?",
+    "command": "read -p 'Enter name: ' username",
+    "meaning": "Prompts user and stores entered string into variable username.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 287,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I generate a sequence of numbers 1 to 10?",
+    "command": "seq 1 10",
+    "meaning": "Prints integers 1 through 10 on separate lines.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 288,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I generate a random integer in bash?",
+    "command": "echo $RANDOM",
+    "meaning": "Prints pseudo-random integer between 0 and 32767.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 289,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I print a message to the terminal?",
+    "command": "echo 'Hello OS Lab'",
+    "meaning": "Prints text string to stdout.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 290,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I format text output with printf?",
+    "command": "printf 'PID: %d | Status: %s\\n' 123 'RUNNING'",
+    "meaning": "Formats and prints structured text using C-style format specifiers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 291,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I execute a command only if the previous command succeeded?",
+    "command": "make && ./run",
+    "meaning": "Logical AND (&&) runs ./run only if make exits with status code 0.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 292,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I execute a fallback command if the previous command fails?",
+    "command": "./run || echo 'Failed'",
+    "meaning": "Logical OR (||) runs echo only if ./run exits with non-zero error status.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 293,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I inspect the exit status code of the last command?",
+    "command": "echo $?",
+    "meaning": "Prints return code of previous command: 0 represents success, non-zero is error.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 294,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I tee output to both terminal and a file simultaneously?",
+    "command": "ls -l | tee output.txt",
+    "meaning": "T-junction that writes to output.txt while simultaneously printing to screen.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 295,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I append output to file while displaying with tee?",
+    "command": "echo 'entry' | tee -a log.txt",
+    "meaning": "Appends to log.txt while mirroring output to stdout.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 296,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I count how many lines a command produces?",
+    "command": "ls -1 | wc -l",
+    "meaning": "Pipes output to wc to count the total lines.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 297,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I create a loop in bash to run 5 iterations?",
+    "command": "for i in {1..5}; do echo $i; done",
+    "meaning": "Iterates variable i from 1 to 5 printing each number.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 298,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I read a file line by line in bash?",
+    "command": "while read -r line; do echo \"Line: $line\"; done < file.txt",
+    "meaning": "Reads each line into variable without backslash escaping.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 299,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I sleep or delay script execution for 5 seconds?",
+    "command": "sleep 5",
+    "meaning": "Pauses execution for 5 seconds.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 300,
+    "category": "Shell utilities",
+    "mode": "Command",
+    "question": "How do I view Linux kernel version and architecture?",
+    "command": "uname -a",
+    "meaning": "Prints kernel name, hostname, kernel release, build date, and CPU architecture.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 301,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a process in operating systems?",
+    "command": "",
+    "meaning": "A process is a program in execution. It consists of the program code (text section), current activity represented by the program counter and processor registers, a process stack for temporary data (function parameters and return addresses), a data section containing global variables, and a heap for dynamic memory allocation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 302,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Process Control Block (PCB)?",
+    "command": "",
+    "meaning": "A Process Control Block is a kernel data structure containing all information associated with a specific process: process state, program counter, CPU registers, CPU scheduling information, memory management information, accounting information, and I/O status information.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 303,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What are the five main states of a process?",
+    "command": "",
+    "meaning": "The five standard process states are: New (process is being created), Ready (waiting to be assigned to a processor), Running (instructions are being executed on a CPU), Waiting/Blocked (waiting for some event or I/O completion), and Terminated (process has finished execution).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 304,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a context switch in operating systems?",
+    "command": "",
+    "meaning": "A context switch is the mechanism of saving the CPU state (registers, program counter) of a currently running process and loading the saved state of another process so the CPU can transition execution. Context switches are pure computational overhead because the CPU performs no productive work during the switch.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 305,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between a process and a thread?",
+    "command": "",
+    "meaning": "A process is an independent executing entity with its own dedicated virtual address space and private system resources. A thread is a lightweight execution unit within a process; multiple threads inside the same process share code, data sections, and OS resources, but maintain separate stacks, registers, and program counters.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 306,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a zombie process?",
+    "command": "",
+    "meaning": "A zombie process is a process that has completed execution via exit(), but still has an entry in the system process table because its parent process has not yet read its exit status code using wait() or waitpid().",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 307,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is an orphan process and how does Linux handle it?",
+    "command": "",
+    "meaning": "An orphan process is a running child process whose parent process has terminated before it. The Linux kernel adopts orphan processes by re-parenting them to the init or systemd process (PID 1), which periodically invokes wait() to reap their exit status when they finish.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 308,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between user-level threads and kernel-level threads?",
+    "command": "",
+    "meaning": "User-level threads are managed entirely by runtime user libraries without kernel awareness, making context switching fast but causing blocking system calls to stall the entire process. Kernel-level threads are scheduled and managed directly by the OS kernel, allowing true parallelism on multicore processors even if one thread blocks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 309,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the role of the fork() system call?",
+    "command": "",
+    "meaning": "The fork() system call creates a new child process that is an exact duplicate of the calling parent process, copying memory space, file descriptors, and registers. In the parent process, fork() returns the PID of the child; in the child process, it returns 0.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 310,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the role of the exec() family of system calls?",
+    "command": "",
+    "meaning": "The exec() system call replaces the current process image, code, data, heap, and stack with a newly loaded executable binary, keeping the same PID.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 311,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the wait() system call used for?",
+    "command": "",
+    "meaning": "The wait() system call suspends the calling parent process until one of its child processes terminates, returning the terminated child's PID and its exit status code to prevent zombie processes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 312,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Copy-on-Write (COW)?",
+    "command": "",
+    "meaning": "Copy-on-Write is an optimization technique where parent and child processes share the exact same physical memory pages after a fork(). Physical pages are duplicated only when either process attempts to write to them, drastically reducing fork memory overhead.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 313,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is an Inter-Process Communication (IPC)?",
+    "command": "",
+    "meaning": "IPC refers to mechanisms provided by the operating system enabling distinct processes to exchange data and synchronize actions. Primary IPC mechanisms include pipes, named pipes (FIFOs), message queues, shared memory, and network sockets.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 314,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a pipe in Linux and how does it work?",
+    "command": "",
+    "meaning": "A pipe is a unidirectional IPC channel that buffers byte streams in kernel memory. Data written to the write end of the pipe (fd[1]) is read sequentially from the read end (fd[0]) following First-In-First-Out order.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 315,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is shared memory in IPC?",
+    "command": "",
+    "meaning": "Shared memory is an IPC mechanism where the kernel maps the same physical memory pages into the address spaces of multiple processes, allowing fast data exchange at memory bus speeds without system call overhead.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 316,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a thread pool and why is it used?",
+    "command": "",
+    "meaning": "A thread pool is a pre-allocated collection of worker threads waiting to execute incoming tasks. It eliminates the frequent overhead of creating and destroying threads dynamically while preventing uncontrolled thread creation from exhausting system memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 317,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Difference between Multiprogramming, Multiprocessing, and Multitasking?",
+    "command": "",
+    "meaning": "Multiprogramming keeps multiple programs in memory simultaneously so the CPU is never idle during I/O. Multiprocessing uses multiple physical CPUs/cores to execute multiple processes concurrently. Multitasking is a logical extension of multiprogramming using time-sharing to switch rapidly between tasks giving the illusion of simultaneous execution.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 318,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is process starvation?",
+    "command": "",
+    "meaning": "Starvation (or indefinite blocking) is a condition where a runnable process waits perpetually for a resource or CPU allocation because higher-priority processes continually preempt it.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 319,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "How does the OS solve process starvation?",
+    "command": "",
+    "meaning": "Operating systems solve starvation primarily through 'aging', a technique that gradually increments the priority of processes that wait in the ready queue for long durations until they obtain execution time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 320,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a daemon process in Unix/Linux?",
+    "command": "",
+    "meaning": "A daemon is a background process that runs detached from any controlling terminal, typically initialized during system boot to provide ongoing services such as networking (sshd), scheduling (cron), or logging (syslogd).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 321,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the role of PID 1 in Linux?",
+    "command": "",
+    "meaning": "PID 1 is the first user-space process spawned by the Linux kernel at boot (systemd or init). It acts as the ancestor of all other processes, manages system initialization, spawns services, and reaps orphan processes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 322,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What happens during a trap or software interrupt?",
+    "command": "",
+    "meaning": "A trap is a synchronous interrupt generated by CPU hardware when an exceptional condition occurs (such as division by zero or invalid memory access) or when a user program explicitly executes a system call instruction to switch to kernel mode.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 323,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between User Mode and Kernel Mode?",
+    "command": "",
+    "meaning": "User mode is a restricted execution privilege level where applications cannot directly access hardware or critical kernel memory. Kernel mode is an unrestricted privilege mode where the CPU has full access to hardware instructions, physical memory, and device registers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 324,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Amdahl's Law?",
+    "command": "",
+    "meaning": "Amdahl's law is a mathematical formula that calculates the theoretical maximum speedup of a program running on multiple processors, showing that overall speedup is fundamentally limited by the serial, non-parallelizable portion of the task.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 325,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is concurrency vs parallelism?",
+    "command": "",
+    "meaning": "Concurrency is the ability to manage and make progress on multiple tasks over overlapping time periods (often via time-slicing on a single CPU). Parallelism is the simultaneous execution of multiple tasks at the exact same physical instant across multiple CPU cores.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 326,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the thread control block (TCB)?",
+    "command": "",
+    "meaning": "A Thread Control Block is a data structure maintained by the operating system containing per-thread information: Thread ID, stack pointer, program counter, register values, scheduling priority, and a pointer to the parent process PCB.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 327,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is CPU burst and I/O burst cycle?",
+    "command": "",
+    "meaning": "Process execution consists of a cycle of CPU execution (CPU burst) and I/O wait (I/O burst). Processes alternate between computing on the CPU and waiting for I/O operations to complete.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 328,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a CPU-bound process versus an I/O-bound process?",
+    "command": "",
+    "meaning": "A CPU-bound process spends the vast majority of its time performing intensive numerical computations with long CPU bursts. An I/O-bound process spends most of its time waiting for input/output operations, characterized by frequent, very short CPU bursts.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 329,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a race condition in multi-threaded programming?",
+    "command": "",
+    "meaning": "A race condition occurs when two or more threads concurrently access and modify shared data without synchronization, leading to unpredictable, incorrect results that depend on the arbitrary order of thread execution.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 330,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is an atomic operation?",
+    "command": "",
+    "meaning": "An atomic operation is an instruction or sequence of instructions that executes completely to completion without any possibility of interruption, preemption, or observation of intermediate states by other threads.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 331,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the role of an interrupt vector table?",
+    "command": "",
+    "meaning": "The interrupt vector table is an array of memory addresses maintained by the operating system that maps hardware interrupt request numbers directly to their respective Interrupt Service Routine (ISR) handler functions.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 332,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a signal in Linux and how is it handled?",
+    "command": "",
+    "meaning": "A signal is an asynchronous software notification delivered by the kernel to a process to notify it of an event (such as SIGINT, SIGSEGV, SIGKILL). Processes can catch, ignore, or execute default handler actions for signals.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 333,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is reentrancy in operating system routines?",
+    "command": "",
+    "meaning": "A reentrant function is one that can be safely interrupted in the middle of execution and called again by another thread or interrupt handler without corrupting data, achieved by avoiding static and global state variables.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 334,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Difference between Hard Real-Time and Soft Real-Time systems?",
+    "command": "",
+    "meaning": "In Hard Real-Time systems, meeting timing deadlines is absolute; missing a single deadline results in total system failure (e.g. flight control, pacemakers). In Soft Real-Time systems, missing a deadline degrades service quality but does not cause catastrophic failure (e.g. video streaming).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 335,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is message passing in IPC?",
+    "command": "",
+    "meaning": "Message passing is an IPC mechanism where processes communicate by sending and receiving structured messages through kernel queues (send() and receive()), enabling communication across distributed systems without shared memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 336,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is mutual exclusion?",
+    "command": "",
+    "meaning": "Mutual exclusion is the concurrency requirement that only one process or thread can be present inside its critical section accessing a shared resource at any given moment.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 337,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is process swapping?",
+    "command": "",
+    "meaning": "Swapping is a memory management technique where temporarily inactive processes are copied completely from main memory to backing storage (swap disk) to free physical RAM for active processes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 338,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is an interrupt service routine (ISR)?",
+    "command": "",
+    "meaning": "An Interrupt Service Routine is a privileged kernel function executed immediately when a hardware interrupt fires, responsible for servicing the peripheral device and clearing the interrupt line.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 339,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the function of the sched_yield() system call?",
+    "command": "",
+    "meaning": "The sched_yield() system call allows a running thread to voluntarily relinquish the CPU, moving itself to the back of the ready queue for its priority level.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 340,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a critical section?",
+    "command": "",
+    "meaning": "A critical section is a segment of code where a process accesses shared resources (such as global variables, memory tables, or files) that must not be accessed concurrently by more than one process.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 341,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the primary role of a CPU scheduler?",
+    "command": "",
+    "meaning": "The CPU scheduler (short-term scheduler) selects which runnable process in the ready queue is allocated CPU execution time when the current process terminates, yields, or blocks on I/O.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 342,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between preemptive and non-preemptive scheduling?",
+    "command": "",
+    "meaning": "In non-preemptive scheduling, once a process gets the CPU, it holds it until it voluntarily terminates or blocks for I/O. In preemptive scheduling, the OS can forcefully interrupt a running process and reallocate the CPU to a higher-priority task.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 343,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Turnaround Time in CPU scheduling?",
+    "command": "",
+    "meaning": "Turnaround time is the total interval of time from the moment a process is submitted to the ready queue until the moment it completes execution (Turnaround Time = Completion Time - Submission Time).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 344,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Waiting Time in CPU scheduling?",
+    "command": "",
+    "meaning": "Waiting time is the total amount of time a process spends waiting in the ready queue seeking CPU execution (Waiting Time = Turnaround Time - Burst Time).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 345,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Response Time in CPU scheduling?",
+    "command": "",
+    "meaning": "Response time is the duration from when a process is submitted to when the CPU first starts executing it and produces its first response.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 346,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is CPU Throughput?",
+    "command": "",
+    "meaning": "Throughput is the performance metric measuring the number of complete processes completed per unit of time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 347,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is First-Come, First-Served (FCFS) scheduling?",
+    "command": "",
+    "meaning": "FCFS is a non-preemptive scheduling algorithm where the process that requests the CPU first is allocated the CPU first in strict FIFO arrival order.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 348,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Convoy Effect in FCFS scheduling?",
+    "command": "",
+    "meaning": "The convoy effect occurs in FCFS when several short I/O-bound processes are forced to wait behind a single massive CPU-bound process, causing CPU and device utilization to drop significantly.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 349,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Shortest Job First (SJF) scheduling?",
+    "command": "",
+    "meaning": "SJF associates each process with the length of its next CPU burst, allocating the CPU to the process with the shortest burst. It is provably optimal for minimizing average waiting time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 350,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Shortest Remaining Time First (SRTF)?",
+    "command": "",
+    "meaning": "SRTF is the preemptive version of SJF scheduling: if a newly arrived process has a CPU burst shorter than the remaining burst of the currently executing process, the current process is preempted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 351,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the main drawback of Shortest Job First scheduling?",
+    "command": "",
+    "meaning": "The major drawback of SJF is that it is impossible to know the exact duration of future CPU bursts in advance in general-purpose systems; it can only be estimated using exponential smoothing of past bursts.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 352,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Round Robin (RR) scheduling?",
+    "command": "",
+    "meaning": "Round Robin is a preemptive scheduling algorithm designed for time-sharing systems where each ready process is allocated the CPU for a fixed time quantum. When the quantum expires, the process is moved to the tail of the queue.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 353,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "How does Time Quantum size affect Round Robin scheduling?",
+    "command": "",
+    "meaning": "If the time quantum is extremely large, Round Robin degenerates into FCFS scheduling. If the time quantum is too small, context switching overhead dominates the CPU, degrading overall throughput.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 354,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Priority Scheduling?",
+    "command": "",
+    "meaning": "Priority scheduling assigns a priority ranking integer to each process; the CPU is allocated to the process with the highest priority (either preemptively or non-preemptively).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 355,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the major problem with Priority Scheduling and how is it resolved?",
+    "command": "",
+    "meaning": "The major problem is indefinite blocking (starvation), where low-priority processes may never execute if high-priority processes continually arrive. It is resolved using aging (incrementing waiting process priority over time).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 356,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Multilevel Queue Scheduling?",
+    "command": "",
+    "meaning": "Multilevel Queue scheduling partitions the ready queue into multiple separate queues (such as foreground interactive and background batch), each with its own scheduling algorithm and queue priority.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 357,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Multilevel Feedback Queue (MLFQ) scheduling?",
+    "command": "",
+    "meaning": "MLFQ allows processes to move between queues based on their CPU burst behavior: CPU-bound processes that consume full time quanta are demoted to lower-priority queues with larger quanta, while I/O-bound interactive processes stay in high-priority queues.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 358,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Completely Fair Scheduler (CFS) in Linux?",
+    "command": "",
+    "meaning": "CFS is the default Linux CPU scheduler for normal tasks. It models an ideal multitasking CPU on hardware using red-black trees, scheduling tasks based on their virtual runtime (vruntime) so tasks that have received the least execution time run next.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 359,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Virtual Runtime (vruntime) in Linux CFS?",
+    "command": "",
+    "meaning": "Virtual runtime is a monotonically increasing counter tracking the amount of execution time a task has consumed, scaled by its nice priority level. Processes with smaller vruntime values are selected first.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 360,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Processor Affinity in multiprocessor scheduling?",
+    "command": "",
+    "meaning": "Processor affinity is the scheduling tendency to keep a process running on the same physical CPU core to exploit cache warmness and avoid expensive cache invalidations across cores.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 361,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Difference between Soft Affinity and Hard Affinity?",
+    "command": "",
+    "meaning": "Soft affinity means the OS scheduler will attempt to keep a process on the same CPU core, but may migrate it for load balancing. Hard affinity explicitly restricts a process to run only on a designated subset of CPU cores.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 362,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Load Balancing in multiprocessor operating systems?",
+    "command": "",
+    "meaning": "Load balancing keeps workload evenly distributed across all processors in a symmetric multiprocessing system using push migration (overloaded CPUs push tasks) and pull migration (idle CPUs pull tasks).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 363,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Asymmetric Multiprocessing (AMP) versus Symmetric Multiprocessing (SMP)?",
+    "command": "",
+    "meaning": "In AMP, one master CPU handles OS kernel scheduling and I/O while slave CPUs execute user programs. In SMP, all processors are peers and each executes a copy of the OS kernel sharing memory and resources.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 364,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Real-Time CPU Scheduling?",
+    "command": "",
+    "meaning": "Real-Time CPU scheduling guarantees that time-critical tasks execute and complete within strict deterministic deadlines, using algorithms like Rate Monotonic Scheduling (RMS) or Earliest Deadline First (EDF).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 365,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Rate Monotonic Scheduling (RMS)?",
+    "command": "",
+    "meaning": "RMS is a static-priority preemptive real-time algorithm that assigns higher priority to periodic tasks with shorter periods (higher frequency).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 366,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Earliest Deadline First (EDF) scheduling?",
+    "command": "",
+    "meaning": "EDF is a dynamic-priority real-time scheduling algorithm that allocates priority dynamically based on deadlines: the task whose deadline is closest in time receives the highest scheduling priority.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 367,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Priority Inversion?",
+    "command": "",
+    "meaning": "Priority inversion occurs when a low-priority process holds a shared resource needed by a high-priority process, but the low-priority process is preempted by an unrelated medium-priority process, causing the high-priority process to wait indefinitely.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 368,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "How does Priority Inheritance solve Priority Inversion?",
+    "command": "",
+    "meaning": "Priority inheritance temporarily elevates the priority of the lower-priority process holding the lock to match the priority of the highest-priority process waiting for that lock, allowing it to finish and release the resource quickly.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 369,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Gantt Chart used for in CPU scheduling?",
+    "command": "",
+    "meaning": "A Gantt chart is a horizontal bar chart used to illustrate process execution timelines, showing start and finish times for each process to calculate waiting time and turnaround time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 370,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the dispatcher in an operating system?",
+    "command": "",
+    "meaning": "The dispatcher is the kernel module that gives control of the CPU to the process selected by the short-term scheduler, involving context switching, switching to user mode, and jumping to the proper location in the program.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 371,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Dispatch Latency?",
+    "command": "",
+    "meaning": "Dispatch latency is the time elapsed between stopping one process and starting the execution of another process during a context switch.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 372,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Gang Scheduling?",
+    "command": "",
+    "meaning": "Gang scheduling is a multiprocessor scheduling technique that schedules related threads of a parallel application to execute simultaneously across multiple cores on the same synchronized time slice.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 373,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Proportional Share Scheduling?",
+    "command": "",
+    "meaning": "Proportional share (or lottery) scheduling allocates T shares among all processes; an application with N shares is guaranteed approximately N/T fraction of total CPU time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 374,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the relationship between Arrival Time, Burst Time, and Completion Time?",
+    "command": "",
+    "meaning": "Completion Time is the instant a process finishes. Turnaround Time = Completion Time - Arrival Time. Waiting Time = Turnaround Time - Burst Time.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 375,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "Why is FCFS unsuitable for interactive time-sharing systems?",
+    "command": "",
+    "meaning": "FCFS provides no preemption and high variance in response times; a single long compute-heavy process monopolizes the CPU while interactive users experience frozen screens.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 376,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Deadlock in operating systems?",
+    "command": "",
+    "meaning": "A deadlock is a situation where two or more processes are permanently blocked because each process holds a resource that another process needs, and none can proceed without acquiring it.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 377,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What are the four Coffman conditions necessary for a deadlock?",
+    "command": "",
+    "meaning": "The four necessary conditions for deadlock are: Mutual Exclusion (non-shareable resources), Hold and Wait (processes hold resources while requesting others), No Preemption (resources cannot be forcibly confiscated), and Circular Wait (a circular chain of processes exists where each waits for a resource held by the next).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 378,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between Deadlock Prevention and Deadlock Avoidance?",
+    "command": "",
+    "meaning": "Deadlock prevention eliminates deadlocks by constraining requests to mathematically guarantee that at least one of the four Coffman conditions can never hold. Deadlock avoidance dynamically evaluates resource allocation states using knowledge of future maximum requests to ensure the system never enters an unsafe state.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 379,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Safe State in deadlock avoidance?",
+    "command": "",
+    "meaning": "A state is safe if there exists a safe sequence of processes <P1, P2, ... Pn> such that for each Pi, the resources that Pi can still request can be satisfied by current available resources plus the resources held by all preceding processes Pj.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 380,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Banker's Algorithm?",
+    "command": "",
+    "meaning": "The Banker's Algorithm is a deadlock avoidance algorithm for systems with multiple instances of each resource type. It tests for safety by simulating the allocation of predetermined maximum possible resources and verifying whether a safe sequence exists before granting any request.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 381,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Resource Allocation Graph (RAG)?",
+    "command": "",
+    "meaning": "A Resource Allocation Graph is a directed graph where nodes represent processes and resource types; directed edges from a process to a resource represent requests, while edges from a resource to a process represent assignments. If a RAG contains no cycles, no deadlock exists.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 382,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "Does a cycle in a Resource Allocation Graph always mean deadlock?",
+    "command": "",
+    "meaning": "If every resource type has exactly one instance, a cycle is a necessary and sufficient condition for deadlock. If resource types have multiple instances, a cycle indicates potential deadlock but does not guarantee it.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 383,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What are the strategies for handling Deadlock Detection and Recovery?",
+    "command": "",
+    "meaning": "The OS periodically runs cycle-detection algorithms (e.g. Banker's detection variant). Upon detecting deadlock, recovery strategies include process termination (killing all deadlocked processes or aborting one by one) and resource preemption (rolling back processes to checkpoints).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 384,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Ostrich Algorithm in deadlocks?",
+    "command": "",
+    "meaning": "The Ostrich algorithm is the strategy of ignoring deadlocks altogether, assuming they occur rarely enough that the cost of prevention and detection exceeds the damage of an occasional manual reboot (used by most general-purpose OSes like Linux and Windows).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 385,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Semaphore?",
+    "command": "",
+    "meaning": "A semaphore is a protected integer synchronization variable accessed exclusively through two standard atomic operations: wait() (or P(), which decrements the counter and blocks if negative) and signal() (or V(), which increments the counter and wakes up a blocked process).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 386,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between a Binary Semaphore and a Counting Semaphore?",
+    "command": "",
+    "meaning": "A binary semaphore has an integer value restricted to 0 or 1, functioning as a mutual exclusion lock (mutex). A counting semaphore has an unrestricted non-negative integer domain, used to manage access to a resource pool with finite identical instances.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 387,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Mutex Lock?",
+    "command": "",
+    "meaning": "A Mutex (mutual exclusion lock) is a binary synchronization primitive used to protect critical sections: a thread must acquire the lock before entering and must release it upon exiting, with strict ownership (only the thread that locked it can unlock it).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 388,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between a Mutex and a Binary Semaphore?",
+    "command": "",
+    "meaning": "A Mutex has the concept of ownership: only the thread that successfully acquired the mutex is permitted to release it. A binary semaphore has no ownership; any thread or interrupt handler can signal and release a semaphore.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 389,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Spinlock?",
+    "command": "",
+    "meaning": "A spinlock is a lock where a thread waiting to acquire it loops continuously in a CPU spin loop checking the lock condition ('busy waiting'), suitable only for multiprocessor systems where locks are held for extremely short durations.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 390,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Critical Section Problem?",
+    "command": "",
+    "meaning": "The critical section problem is designing a protocol that coordinating processes must use to cooperate without race conditions, satisfying three essential requirements: Mutual Exclusion, Progress, and Bounded Waiting.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 391,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Bounded Waiting condition in critical section design?",
+    "command": "",
+    "meaning": "Bounded waiting requires that there must be a bound or limit on the number of times other processes are allowed to enter their critical sections after a process has made a request to enter and before that request is granted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 392,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Peterson's Algorithm?",
+    "command": "",
+    "meaning": "Peterson's algorithm is a classic software-based solution to the critical section problem for two processes that uses shared variables 'turn' and 'flag[2]' to guarantee mutual exclusion, progress, and bounded waiting.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 393,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Test-and-Set hardware instruction?",
+    "command": "",
+    "meaning": "Test-and-Set is an atomic hardware instruction that reads the current memory value and sets it to true in a single uninterruptible memory bus cycle, enabling the construction of simple mutual exclusion primitives.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 394,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Compare-and-Swap (CAS)?",
+    "command": "",
+    "meaning": "Compare-and-Swap is an atomic hardware instruction that compares the contents of a memory location to an expected value, and only if they match does it modify the contents to a new value, serving as the basis for lock-free data structures.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 395,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Monitor in concurrent programming?",
+    "command": "",
+    "meaning": "A monitor is a high-level synchronization construct encapsulated in a class or module where only one thread can be active inside the monitor at any given time, utilizing condition variables (wait and signal) for thread coordination.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 396,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What are Condition Variables in monitors?",
+    "command": "",
+    "meaning": "Condition variables are synchronization primitives within monitors that allow threads to wait until a specific boolean condition becomes true, providing wait() (releases lock and sleeps) and signal() (wakes up a waiting thread).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 397,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Producer-Consumer (Bounded Buffer) problem?",
+    "command": "",
+    "meaning": "The Producer-Consumer problem involves two processes sharing a fixed-size buffer: the producer must sleep if the buffer is full, and the consumer must sleep if the buffer is empty, requiring synchronization to prevent race conditions during insertion and removal.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 398,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Readers-Writers problem?",
+    "command": "",
+    "meaning": "The Readers-Writers problem models access to a shared database: multiple readers may read simultaneously without conflict, but an exclusive lock is required for a writer to modify data, raising challenges of reader starvation vs writer starvation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 399,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Dining Philosophers problem?",
+    "command": "",
+    "meaning": "The Dining Philosophers problem is a classic synchronization dilemma modeling resource allocation: five philosophers sit around a table with five chopsticks, where each must acquire both adjacent chopsticks to eat, easily causing deadlock if all pick up their left chopstick simultaneously.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 400,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "How is the Dining Philosophers problem resolved without deadlock?",
+    "command": "",
+    "meaning": "Solutions include allowing at most four philosophers at the table simultaneously, using an asymmetric solution (odd philosophers pick left chopstick first, even pick right), or requiring chopsticks to be acquired atomically inside a critical section.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 401,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Sleeping Barber problem?",
+    "command": "",
+    "meaning": "The Sleeping Barber problem is a concurrency scenario involving a barber, a barber chair, and a waiting room of chairs, demonstrating challenges in handling multiple queues, customer notifications, and avoiding race conditions on empty/full states.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 402,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Livelock?",
+    "command": "",
+    "meaning": "Livelock is a concurrency condition where two or more processes continuously change their internal states in response to each other without making any practical forward progress, consuming CPU cycles unlike deadlock.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 403,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Deadlock Recovery by Checkpointing and Rollback?",
+    "command": "",
+    "meaning": "The operating system periodically checkpoints the state, registers, and memory of processes; upon detecting deadlock, the OS preempts resources by rolling back a chosen victim process to its last saved checkpoint.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 404,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Circular Wait condition and how can it be prevented?",
+    "command": "",
+    "meaning": "Circular wait occurs when a cycle of processes wait on each other's resources. It is prevented by imposing a strict total global ordering on all resource types and requiring that processes request resources strictly in increasing order.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 405,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Hold and Wait condition and how can it be eliminated?",
+    "command": "",
+    "meaning": "Hold and wait requires processes to hold allocated resources while waiting for new ones. It is eliminated by requiring a process to request and receive all required resources at once before execution begins.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 406,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Priority Ceiling Protocol?",
+    "command": "",
+    "meaning": "Priority Ceiling Protocol is an algorithm used in real-time systems to avoid priority inversion and deadlock by assigning each shared resource a ceiling priority equal to the highest priority of any task that may lock it.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 407,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Barrier in parallel thread synchronization?",
+    "command": "",
+    "meaning": "A barrier is a synchronization primitive that causes a group of threads to stop execution at a specific point until every thread in the group has reached the barrier before any are allowed to proceed.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 408,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is false sharing in multi-core synchronization?",
+    "command": "",
+    "meaning": "False sharing occurs when threads running on different CPU cores modify independent variables that reside within the same physical cache line, causing unnecessary hardware cache-coherence invalidation traffic.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 409,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between busy waiting and blocking synchronization?",
+    "command": "",
+    "meaning": "Busy waiting repeatedly executes loops testing a flag while consuming CPU cycles (spinlocks). Blocking synchronization puts the waiting thread to sleep, removes it from the ready queue, and frees the CPU for other tasks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 410,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is lock-free programming?",
+    "command": "",
+    "meaning": "Lock-free programming is an implementation methodology for concurrent data structures that avoids mutexes and semaphores entirely by using atomic hardware primitives like Compare-and-Swap (CAS) to guarantee overall system progress.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 411,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a reentrant lock?",
+    "command": "",
+    "meaning": "A reentrant lock (or recursive mutex) allows the thread that currently holds the lock to acquire it again multiple times without deadlocking itself, tracking an internal lock acquisition count.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 412,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Futex in Linux?",
+    "command": "",
+    "meaning": "A Futex (Fast Userspace Mutex) is a Linux kernel primitive that provides fast user-space locking via atomic operations in the uncontended case, entering the kernel only when thread contention requires putting a thread to sleep.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 413,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Memory Barrier (Memory Fence)?",
+    "command": "",
+    "meaning": "A memory barrier is a hardware instruction that forces the CPU and compiler to preserve a strict ordering constraint on memory read and write operations, preventing out-of-order execution across the barrier.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 414,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Thread Sanitizer (TSan)?",
+    "command": "",
+    "meaning": "ThreadSanitizer is a tool built into compilers (like GCC/Clang) that detects data races in C/C++ multithreaded programs at runtime by tracking memory accesses and synchronization events.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 415,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the ABA problem in multithreaded lock-free systems?",
+    "command": "",
+    "meaning": "The ABA problem occurs when a thread reads memory value A, gets preempted while another thread changes A to B and back to A, causing a CAS instruction to falsely assume the state never changed.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 416,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between Logical Address and Physical Address?",
+    "command": "",
+    "meaning": "A logical address (virtual address) is generated by the CPU during program execution. A physical address is the actual hardware memory address loaded into the memory bus to access a storage location in physical RAM.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 417,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Memory Management Unit (MMU)?",
+    "command": "",
+    "meaning": "The MMU is a hardware component on the CPU that translates virtual addresses into physical addresses at runtime using page tables.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 418,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Paging in operating systems?",
+    "command": "",
+    "meaning": "Paging is a memory management scheme that eliminates the need for contiguous allocation by dividing physical memory into fixed-size blocks called frames, and dividing virtual memory into blocks of the same size called pages.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 419,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Page Table?",
+    "command": "",
+    "meaning": "A page table is a per-process kernel data structure that stores the mapping between a process's virtual pages and physical memory frames, along with protection and status bits.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 420,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Internal Fragmentation?",
+    "command": "",
+    "meaning": "Internal fragmentation occurs when memory is allocated in fixed-size blocks (like pages) and the requested process memory is smaller than the block size, leaving wasted, unusable memory inside the allocated unit.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 421,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is External Fragmentation?",
+    "command": "",
+    "meaning": "External fragmentation occurs when dynamic memory allocation leaves total free memory space scattered in small non-contiguous pockets, such that a memory request cannot be satisfied even though total free space is sufficient.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 422,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "How does Paging eliminate External Fragmentation?",
+    "command": "",
+    "meaning": "Paging eliminates external fragmentation because any free physical frame can be allocated to any process; memory allocations do not need to be physically contiguous.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 423,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Translation Lookaside Buffer (TLB)?",
+    "command": "",
+    "meaning": "The TLB is an ultra-fast hardware associative associative cache located inside the CPU that stores recent virtual-to-physical page table translations to avoid traversing page tables in RAM.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 424,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a TLB Hit and a TLB Miss?",
+    "command": "",
+    "meaning": "A TLB hit occurs when the requested virtual page number is present in the TLB cache, returning the physical frame number instantly. A TLB miss occurs when the translation is not cached, requiring a page table walk in main memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 425,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Effective Memory Access Time (EMAT)?",
+    "command": "",
+    "meaning": "EMAT is the average time to access memory considering TLB hit ratio: EMAT = (Hit Ratio * (TLB Search Time + Memory Access Time)) + ((1 - Hit Ratio) * (TLB Search Time + 2 * Memory Access Time)).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 426,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Multi-level Paging (Hierarchical Paging)?",
+    "command": "",
+    "meaning": "Hierarchical paging breaks a massive linear page table into a tree of smaller page tables (e.g. two-level or four-level paging) so that page tables themselves can be paged out, avoiding allocating gigabytes of contiguous RAM for page tables.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 427,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is an Inverted Page Table?",
+    "command": "",
+    "meaning": "An inverted page table has only one entry for each real page frame of physical memory rather than each virtual page, dramatically reducing memory overhead in 64-bit architectures.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 428,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Segmentation in memory management?",
+    "command": "",
+    "meaning": "Segmentation is a memory management scheme that supports the programmer's view of memory by dividing memory into variable-length logical units (segments) such as code, stack, data, and heap, using segment tables with base and limit registers.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 429,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between Paging and Segmentation?",
+    "command": "",
+    "meaning": "Paging divides memory into fixed-size blocks invisible to the programmer, eliminating external fragmentation. Segmentation divides memory into variable-sized logical blocks reflecting program structure, which can cause external fragmentation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 430,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Segmentation with Paging?",
+    "command": "",
+    "meaning": "A hybrid scheme that divides each variable-sized logical segment into fixed-size pages, combining the logical organization of segmentation with the allocation ease of paging.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 431,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Page Fault?",
+    "command": "",
+    "meaning": "A page fault is a hardware interrupt generated by the CPU MMU when a program accesses a virtual page whose valid-invalid bit is marked invalid (meaning the page is not currently resident in physical RAM).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 432,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What are the steps in handling a Page Fault?",
+    "command": "",
+    "meaning": "1) CPU traps to OS. 2) OS checks internal tables to verify valid reference. 3) Find a free physical frame. 4) Read the missing page from swap disk into the frame. 5) Update page table valid bit. 6) Restart the instruction that faulted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 433,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Valid-Invalid Bit in page table entries?",
+    "command": "",
+    "meaning": "The valid-invalid bit indicates whether the associated page is currently resident in physical memory (valid = 1) or is stored on swap backing store/invalid (invalid = 0).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 434,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Dirty Bit (Modified Bit) in paging?",
+    "command": "",
+    "meaning": "The dirty bit is set by hardware whenever a page is written to; if the page needs to be evicted, it must be written back to disk only if the dirty bit is set, saving disk writes for unmodified clean pages.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 435,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Reference Bit in page tables?",
+    "command": "",
+    "meaning": "The reference bit is set by hardware whenever a page is accessed (read or written), used by page replacement algorithms like Clock/Second-Chance to approximate LRU behavior.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 436,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Base and Limit Registers used for?",
+    "command": "",
+    "meaning": "Base and limit registers define the logical address range of a process in contiguous memory allocation: base specifies the starting physical address and limit specifies the size, preventing processes from accessing other processes' memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 437,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Dynamic Relocation?",
+    "command": "",
+    "meaning": "Dynamic relocation is mapping virtual addresses to physical addresses at runtime using a relocation register added to every logical address generated by the CPU.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 438,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Dynamic Loading in memory management?",
+    "command": "",
+    "meaning": "Dynamic loading is an execution technique where routines are not loaded into memory until they are called, conserving physical RAM for rarely used error handling code.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 439,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Dynamic Linking and Shared Libraries?",
+    "command": "",
+    "meaning": "Dynamic linking postpones the linking of shared libraries (.so or .dll) until execution time, allowing multiple running programs to share a single copy of a library in physical memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 440,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a memory leak?",
+    "command": "",
+    "meaning": "A memory leak occurs when a program allocates memory dynamically on the heap (e.g. malloc or new) but fails to release it after use, gradually consuming RAM until the system runs out of memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 441,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Out-Of-Memory (OOM) Killer in Linux?",
+    "command": "",
+    "meaning": "The OOM Killer is a Linux kernel mechanism that activates when physical memory and swap are exhausted, calculating badness scores to select and terminate the least critical process to reclaim RAM.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 442,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Memory Compaction?",
+    "command": "",
+    "meaning": "Compaction is a memory shuffle operation used in contiguous allocation to shuffle free memory fragments together into one large contiguous block, possible only with dynamic relocation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 443,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the First-Fit memory allocation strategy?",
+    "command": "",
+    "meaning": "First-Fit allocates the first available free memory block that is large enough to satisfy the request, which is computationally fast.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 444,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Best-Fit memory allocation strategy?",
+    "command": "",
+    "meaning": "Best-Fit searches the entire free list to allocate the smallest hole that is big enough, producing the smallest leftover fragment but requiring full search.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 445,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Worst-Fit memory allocation strategy?",
+    "command": "",
+    "meaning": "Worst-Fit allocates the largest available free block, producing the largest remaining leftover hole, but performing poorly in practice.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 446,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Swapping vs Paging?",
+    "command": "",
+    "meaning": "Swapping historically moved entire processes between main memory and disk. Paging operates at the granularity of individual fixed-size pages, allowing processes to run when only a fraction of their pages are in physical RAM.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 447,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is huge pages / Transparent Huge Pages (THP) in Linux?",
+    "command": "",
+    "meaning": "Huge pages are memory pages larger than standard 4KB (typically 2MB or 1GB) that reduce TLB misses and improve memory performance for databases and high-performance computing.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 448,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Demand Paging?",
+    "command": "",
+    "meaning": "Demand paging is a virtual memory architecture where pages are loaded from secondary storage into physical RAM only when they are accessed during program execution, never pre-loading unneeded pages.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 449,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Pure Demand Paging?",
+    "command": "",
+    "meaning": "Pure demand paging starts executing a process with zero pages in physical memory; the very first instruction immediately triggers a page fault, bringing in pages strictly on demand.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 450,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Address Space Layout Randomization (ASLR)?",
+    "command": "",
+    "meaning": "ASLR is a computer security technique that randomizes the memory address positions of the stack, heap, and libraries in virtual memory to prevent buffer-overflow exploit attacks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 451,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Memory Protection Fault (Segmentation Fault)?",
+    "command": "",
+    "meaning": "A segmentation fault (SIGSEGV) is generated when a program attempts to access a memory location it does not have permission to access (such as writing to a read-only page or accessing unallocated addresses).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 452,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the role of the page offset in a virtual address?",
+    "command": "",
+    "meaning": "A virtual address is divided into page number (p) and page offset (d); the page number indexes the page table for the frame base address, while the offset designates the exact byte location within that frame.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 453,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "How does a 64-bit architecture handle enormous page table sizes?",
+    "command": "",
+    "meaning": "64-bit architectures use multi-level hierarchical paging (typically 4-level or 5-level paging) and canonical address filtering (using 48 or 57 bits of virtual address space) to avoid storing unused address ranges.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 454,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Direct Memory Access (DMA)?",
+    "command": "",
+    "meaning": "DMA allows high-speed I/O devices (like network cards and NVMe drives) to transmit blocks of data directly to and from main memory without involving the CPU for every byte.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 455,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Memory Mapped I/O?",
+    "command": "",
+    "meaning": "Memory-mapped I/O maps device control registers and device memory into the CPU's standard memory address space, allowing hardware communication via ordinary memory instructions.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 456,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Non-Uniform Memory Access (NUMA)?",
+    "command": "",
+    "meaning": "NUMA is a multiprocessing memory architecture where memory access times depend on the memory's physical proximity to the processor; a core accesses its local memory faster than remote memory on another socket.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 457,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Slab Allocation in the Linux kernel?",
+    "command": "",
+    "meaning": "Slab allocation is a kernel memory management mechanism that pre-allocates caches of contiguous physical memory for frequently used kernel objects (like PCBs and inodes) to avoid internal fragmentation.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 458,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Buddy System memory allocation algorithm?",
+    "command": "",
+    "meaning": "The buddy system allocates memory from fixed power-of-two partitions; when memory is freed, adjacent buddy blocks are recursively merged together to form larger contiguous blocks.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 459,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Zero-Copy in networking and I/O?",
+    "command": "",
+    "meaning": "Zero-copy is an optimization technique where data is transferred directly between file descriptors, network buffers, and memory without copying data back and forth through user space.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 460,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the purpose of the mmap() system call?",
+    "command": "",
+    "meaning": "The mmap() system call maps files or devices directly into the process virtual address space, enabling high-performance file read/write operations via pointer dereferencing without read() and write() syscalls.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 461,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Virtual Memory?",
+    "command": "",
+    "meaning": "Virtual memory is a storage allocation technique that provides the illusion of an extremely large contiguous memory space by combining physical RAM with secondary disk storage, allowing execution of processes larger than physical memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 462,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Thrashing in operating systems?",
+    "command": "",
+    "meaning": "Thrashing is a catastrophic performance degradation state where the operating system spends more time swapping pages in and out of backing store than executing actual user instructions, typically caused by insufficient physical RAM.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 463,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "How does the OS resolve Thrashing?",
+    "command": "",
+    "meaning": "The OS resolves thrashing by reducing the degree of multiprogramming: suspending or terminating some processes to free enough physical frames so remaining processes can hold their working sets in memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 464,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Working Set Model by Peter Denning?",
+    "command": "",
+    "meaning": "The working set model defines the set of pages a process has actively referenced during the most recent time window delta; an OS ensures thrashing does not occur by allocating each process enough frames to hold its entire working set.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 465,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Belady's Anomaly in page replacement?",
+    "command": "",
+    "meaning": "Belady's Anomaly is the counterintuitive phenomenon where increasing the number of physical page frames results in an increased number of page faults, commonly observed in the First-In, First-Out (FIFO) replacement algorithm.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 466,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Optimal Page Replacement Algorithm (OPT / MIN)?",
+    "command": "",
+    "meaning": "The Optimal algorithm replaces the page that will not be used for the longest period in the future; it guarantees the lowest possible page fault rate but is impossible to implement in practice because future references cannot be known.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 467,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Least Recently Used (LRU) Page Replacement Algorithm?",
+    "command": "",
+    "meaning": "LRU replaces the page in memory that has not been accessed for the longest period of time, approximating optimal replacement based on the principle of temporal locality.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 468,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the FIFO Page Replacement Algorithm?",
+    "command": "",
+    "meaning": "FIFO associates each page with the timestamp it was brought into memory and evicts the oldest page when a frame is needed, suffering from Belady's Anomaly and poor performance.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 469,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Second-Chance (Clock) Page Replacement Algorithm?",
+    "command": "",
+    "meaning": "The Clock algorithm is an efficient approximation of LRU that inspects the reference bit of pages in a circular buffer: if the bit is 0, the page is replaced; if the bit is 1, it is cleared to 0 and given a second chance.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 470,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Enhanced Second-Chance Page Replacement Algorithm?",
+    "command": "",
+    "meaning": "Enhanced Second Chance evaluates both the reference bit and the dirty bit as an ordered pair (reference, modify): (0,0) neither recently used nor modified (best to replace), (0,1) not recently used but modified, (1,0) recently used but clean, (1,1) recently used and dirty.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 471,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Principle of Locality in virtual memory?",
+    "command": "",
+    "meaning": "The principle of locality states that programs tend to access a relatively small portion of their address space at any given time, exhibiting temporal locality (recently accessed items will be accessed again soon) and spatial locality (items near recently accessed items will be accessed soon).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 472,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Page Fault Frequency (PFF) algorithm?",
+    "command": "",
+    "meaning": "PFF is a dynamic frame allocation strategy that measures a process's page-fault rate: if the rate exceeds an upper threshold, the process is granted more frames; if the rate falls below a lower threshold, frames are reclaimed.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 473,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Local versus Global Page Replacement?",
+    "command": "",
+    "meaning": "Local replacement restricts a process to selecting victim pages only from its own allocated frames. Global replacement allows a process to select a replacement frame from the pool of all frames in the system, even if currently allocated to another process.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 474,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Swap Space and how is it used?",
+    "command": "",
+    "meaning": "Swap space is a designated disk partition or file used as an extension of physical RAM, holding inactive virtual memory pages that have been evicted to make room for active processes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 475,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Swappiness in Linux?",
+    "command": "",
+    "meaning": "Swappiness is a Linux kernel parameter (0 to 100) that controls the aggressiveness of page reclamation: lower values instruct the kernel to avoid swapping and prefer reclaiming page caches, while higher values actively swap anonymous memory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 476,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Pre-paging?",
+    "command": "",
+    "meaning": "Pre-paging is an optimization that attempts to load several contiguous pages into memory at once when a page fault occurs, aiming to prevent subsequent page faults by anticipating spatial locality.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 477,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Anonymous Memory in Linux?",
+    "command": "",
+    "meaning": "Anonymous memory refers to memory allocations (such as process stacks and heaps) that are not backed by any named filesystem file, swapped out to swap partitions when evicted.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 478,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Page Buffering in virtual memory?",
+    "command": "",
+    "meaning": "Page buffering maintains a pool of free frames ready to service page faults immediately while modified victim pages are written to disk in batches in the background.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 479,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the I/O Interlock constraint in paging?",
+    "command": "",
+    "meaning": "I/O interlock locks physical memory frames into RAM (pinning) during active DMA transfers so the page replacement algorithm does not accidentally evict a frame while a hardware device is writing into it.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 480,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between major page faults and minor page faults?",
+    "command": "",
+    "meaning": "A minor page fault occurs when the page is already in physical memory but not mapped in the process MMU table (resolved without disk I/O). A major page fault requires reading the page from disk into RAM.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 481,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Memory Overcommit in Linux?",
+    "command": "",
+    "meaning": "Memory overcommit allows the kernel to allocate more virtual memory to processes than physical RAM and swap combined, betting that processes will never simultaneously write to all memory they request.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 482,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Page Coloring in cache architectures?",
+    "command": "",
+    "meaning": "Page coloring is a technique that aligns virtual pages with the physical cache architecture so that contiguous virtual pages map to distinct CPU hardware cache sets to prevent cache conflict misses.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 483,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Core Dumps in operating systems?",
+    "command": "",
+    "meaning": "A core dump is a file containing the complete memory image of a process captured at the exact moment it crashed (e.g. on SIGSEGV), used by developers for post-mortem debugging.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 484,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Shared Memory IPC backed by paging?",
+    "command": "",
+    "meaning": "Shared memory is implemented by configuring the page tables of two distinct processes to point to the exact same physical memory frame addresses.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 485,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "Why is pure FIFO replacement undesirable?",
+    "command": "",
+    "meaning": "FIFO may evict heavily used foundational pages (like libc or runtime libraries) simply because they were loaded early during system initialization.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 486,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is an Inode in Unix/Linux filesystems?",
+    "command": "",
+    "meaning": "An Inode (index node) is a filesystem data structure that stores all metadata about a file (size, permissions, owner, timestamps, data block pointers), excluding only the filename and file data.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 487,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between a Hard Link and a Soft Link (Symlink)?",
+    "command": "",
+    "meaning": "A hard link is an additional directory entry pointing directly to an existing file's inode number on the same filesystem. A soft link is an independent file whose content is a pathname string pointing to another target file or directory.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 488,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What happens to a file when it is deleted with rm while another process has it open?",
+    "command": "",
+    "meaning": "The directory link is unlinked immediately, but the inode and data blocks are preserved by the kernel until the last process closes its open file descriptor, at which point blocks are freed.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 489,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a Journaling File System?",
+    "command": "",
+    "meaning": "A journaling filesystem (like ext4 or XFS) logs metadata modifications to a circular journal buffer on disk before writing changes to main structures, guaranteeing consistency and fast recovery after crashes.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 490,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the Virtual File System (VFS) in Linux?",
+    "command": "",
+    "meaning": "VFS is an abstraction layer in the Linux kernel that provides a standardized object-oriented interface (open, read, write) allowing applications to interact uniformly with disparate filesystems (ext4, NFS, FAT32).",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 491,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Disk Scheduling in operating systems?",
+    "command": "",
+    "meaning": "Disk scheduling algorithms decide the order in which pending mechanical disk I/O read and write requests are serviced to minimize seek time and rotational latency.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 492,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Shortest Seek Time First (SSTF) disk scheduling?",
+    "command": "",
+    "meaning": "SSTF selects the disk I/O request with the minimum seek time from the current head position, improving throughput over FCFS but risking starvation of distant requests.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 493,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the SCAN (Elevator) disk scheduling algorithm?",
+    "command": "",
+    "meaning": "The SCAN algorithm moves the disk arm across cylinders in one direction servicing requests until it reaches the edge of the disk, then reverses direction servicing requests on the way back.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 494,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is C-SCAN (Circular SCAN) disk scheduling?",
+    "command": "",
+    "meaning": "C-SCAN moves the disk head in one direction servicing requests, and upon reaching the end, returns immediately to the beginning of the disk without servicing requests on the return trip, providing more uniform wait times.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 495,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is RAID and what are RAID 0, RAID 1, and RAID 5?",
+    "command": "",
+    "meaning": "RAID combines physical disks into a logical array. RAID 0 strips data across disks for speed (no redundancy). RAID 1 mirrors identical data for fault tolerance. RAID 5 stripes data with distributed parity for balance.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 496,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is a superblock in a filesystem?",
+    "command": "",
+    "meaning": "The superblock is a critical filesystem data structure that records filesystem geometry, total block counts, free block lists, inode counts, and mount status flags.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 497,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is an I/O buffer cache in the kernel?",
+    "command": "",
+    "meaning": "The buffer cache holds disk blocks in physical RAM to accelerate repeated file read and write operations, asynchronously flushing modified blocks to physical media.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 498,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Asynchronous I/O (AIO)?",
+    "command": "",
+    "meaning": "Asynchronous I/O allows a process to initiate an I/O request and continue executing other computations immediately without blocking, receiving a callback or polling for completion later.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 499,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is Memory Mapped File I/O?",
+    "command": "",
+    "meaning": "Memory-mapped I/O maps a file on disk directly into a process's virtual memory address space, allowing disk file read and write operations through pointer dereferencing.",
+    "warning": "",
+    "risky": 0
+  },
+  {
+    "id": 500,
+    "category": "OS concepts",
+    "mode": "Concept",
+    "question": "What is the difference between Block Devices and Character Devices?",
+    "command": "",
+    "meaning": "Block devices (like NVMe and HDDs) access data in fixed-size addressable blocks with random access support. Character devices (like keyboards, serial ports) deliver streams of characters sequentially without random seeking.",
+    "warning": "",
+    "risky": 0
+  }
+]
